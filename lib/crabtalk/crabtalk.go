@@ -2,8 +2,15 @@ package crabtalk
 
 import (
 	"fmt"
+
+	"github.com/gSpera/morse"
 )
 
 func Talk() {
-	fmt.Println("Clack")
+	// Place holder text
+	text := "Hello World"
+
+	// Convert to morse code
+	textInMorse := morse.ToMorse(text)
+	fmt.Println(textInMorse)
 }
