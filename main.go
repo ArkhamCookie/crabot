@@ -1,9 +1,9 @@
 package main
 
 import (
-	"fmt"
+	"crabot/crabtalk"
 )
 
 func main() {
-	fmt.Println("Clack")
+	crabtalk.Talk()
 }
