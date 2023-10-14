@@ -1,0 +1,19 @@
+# Arkham's golang .gitignore
+# https://arkhamcookie.com
+
+## golang
+*.test
+*.sum
+
+## cache
+.trash
+.DS_Store
+
+## output
+out/
+crabot
+
+## configs
+.vscode
+.idea
+.vim
