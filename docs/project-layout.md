@@ -25,9 +25,4 @@ First, it makes it clear that you **can** use this in your project.
 The other reason is I've just used lib for most of my programming projects;
 I don't like cluttering my root directory for a project.
 
-## `/plugins`
-
-This is simular to the `/lib` directory but for library code that is **not** required when building.
-This **can** be used by your Golang packages.
-
 <!-- ## `/web` -->
