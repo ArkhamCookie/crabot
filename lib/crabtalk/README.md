@@ -1,6 +1,6 @@
 # crabtalk
 
-Translate English to crab.
+Translate English [^1] to crab.
 
 ## How it Works
 
@@ -18,3 +18,7 @@ But instead of dits (also known as dashes "-") and dahs (also known as dots ".")
 "clack" = "-"
 
 ---
+
+[^1]: More languages planned!
+  See issue [#foo](https://github.com/ArkhamCookie/crabot/issues/) <!-- issue not created yet -->
+  This means we will also translate [non-Latin extensions/alphabets](https://wikipedia.org/wiki/Morse_code_for_non-Latin_alphabets).
