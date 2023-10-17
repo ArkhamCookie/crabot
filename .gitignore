@@ -8,6 +8,7 @@
 ## cache
 .trash
 .DS_Store
+*.bak
 
 ## output
 out/
