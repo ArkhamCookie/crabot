@@ -14,11 +14,13 @@ body:
     label: Prerequisites
     description: Please make sure you have done all of the following.
     options:
-      - label: I have read the [Contributing Guidelines](https://github.com/ArkhamCookie/deno-wordnik/docs/CONTRIBUTING.md#creating-an-issue)
+      - label: I have read the [Contributing Guidelines](https://github.com/ArkhamCookie/crabot/docs/CONTRIBUTING.md#creating-an-issue)
         required: true
-      - label: I agree to follow the [Code of Conduct](https://github.com/ArkhamCookie/deno-wordnik/docs/CODE_OF_CONDUCT.md)
+      - label: I agree to follow the [Code of Conduct](https://github.com/ArkhamCookie/crabot/docs/CODE_OF_CONDUCT.md)
         required: true
-      - label: I have searched for [existing issues](https://github.com/ArkhamCookie/deno-wordnik/issues) that already report this problem, without success.
+      - label: This is **not** a support question/issue. *See [asking for help](https://github.com/ArkhamCookie/crabot/docs/SUPPORT.md)*
+        required: true
+      - label: I have searched for [existing issues](https://github.com/ArkhamCookie/crabot/issues) that give this suggestion, without success.
         required: true
 
 - type: textarea
@@ -48,7 +50,7 @@ body:
 - type: textarea
   attributes:
     label: Anything else?
-    description: List any other information relevant to your issue.
+    description: List any other information relevant to your idea.
 - type: markdown
   attributes:
     value: |
