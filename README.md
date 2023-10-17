@@ -1,2 +1,3 @@
-# crabot
+# CraBot
+
 The crab Discord bot.
