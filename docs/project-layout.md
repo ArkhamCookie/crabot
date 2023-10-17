@@ -15,7 +15,9 @@ Examples
 ## `/internal`
 
 Private application and library code.
-> [!IMPORTANT] This is not meant to be used by any other projects, so you can **not** rely on it in your projects.
+
+> [!IMPORTANT]
+> This is not meant to be used by any other projects, so you can **not** rely on it in your projects.
 
 ## `/lib`
 
