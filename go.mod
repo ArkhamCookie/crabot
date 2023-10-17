@@ -5,6 +5,7 @@ go 1.20
 require (
 	crabot/crabtalk v0.0.0
 
+require (
 	github.com/gSpera/morse v1.1.2 // indirect
 )
 

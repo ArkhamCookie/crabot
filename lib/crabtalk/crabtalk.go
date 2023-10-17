@@ -1,16 +1,19 @@
 package crabtalk
 
 import (
-	"fmt"
+	"errors"
 
 	"github.com/gSpera/morse"
 )
 
-func Talk() {
+func Talk(text string) (string, error) {
 	// Place holder text
-	text := "Hello World"
+	if text == "" {
+		return "", errors.New("no text given")
+	}
 
 	// Convert to morse code
 	textInMorse := morse.ToMorse(text)
-	fmt.Println(textInMorse)
+
+	return textInMorse, nil
 }

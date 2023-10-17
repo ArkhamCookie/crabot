@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	crabtalk.Talk()
+	crabtalk.Talk("Hello World")
 }
