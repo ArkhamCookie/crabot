@@ -7,7 +7,7 @@ import (
 	"github.com/gSpera/morse"
 )
 
-func convert(text string) (string) {
+func convert(text string) string {
 	text = strings.ReplaceAll(text, ".", "click")
 	text = strings.ReplaceAll(text, "-", "clack")
 	return text
