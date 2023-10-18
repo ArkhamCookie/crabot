@@ -7,7 +7,7 @@ import (
 )
 
 func Talk(text string) (string, error) {
-	// Place holder text
+	// Confirm that text is given
 	if text == "" {
 		return "", errors.New("no text given")
 	}
