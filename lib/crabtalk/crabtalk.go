@@ -7,7 +7,7 @@ import (
 	"github.com/gSpera/morse"
 )
 
-var crabMorse = morse.NewConverter(
+var crabConverter = morse.NewConverter(
 	morse.DefaultMorse,
 
 	morse.WithCharSeparator("_"),
@@ -32,7 +32,7 @@ func Get(text string) (string, error) {
 	}
 
 	// Convert to morse code
-	text = crabMorse.ToMorse(text)
+	text = crabConverter.ToMorse(text)
 
 	// Convert to crab
 	text = convert(text)
