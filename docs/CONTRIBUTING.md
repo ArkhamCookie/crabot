@@ -35,6 +35,14 @@ If you are an experienced programmer but new to Go, you can check out [Go by Exa
 
 ---
 
+## Writing Documentation
+
+Ironically, this section still needs to be written.
+
+<!-- ### [markdownlint](https://github.com/DavidAnson/markdownlint) Tool -->
+
+---
+
 ## Financially
 
 Last, *but certainly not least,* you can support the project financially by donating to me, [@ArkhamCookie](https://github.com/ArkhamCookie).
