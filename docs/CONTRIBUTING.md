@@ -1,7 +1,9 @@
 <!-- markdownlint-disable MD029 -->
 # Contributing
 
-## Setup Your Enviroment
+## Coding
+
+### Setup Your Golang Environment
 
 1. Confirm you have Go 1.20 [installed](https://go.dev/doc/install)
 
@@ -22,7 +24,7 @@
   go install
   ```
 
-## New to Golang
+### New to Golang
 
 If you are new to Go, I **highly** recommend going though [Go's documentation](https://go.dev/doc/).
 The best place to start is [A Tour of Go](https://go.dev/tour/),
