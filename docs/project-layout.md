@@ -8,9 +8,11 @@ GitHub meta files.
 
 Documentation
 
+<!--
 ### `/docs/examples`
 
 Examples
+-->
 
 ## `/internal`
 

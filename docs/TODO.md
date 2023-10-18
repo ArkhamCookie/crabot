@@ -2,12 +2,27 @@
 
 ## Documentation
 
-### `lib/crabralk`
+### `lib/crabtalk`
+
+- [x] README.md
+
+### `lib/formatting`
 
 - [ ] README.md
-- [ ] Documentation General
 
 ## Continuous Integration
+
+### Golang Tests
+
+### `lib/crabtalk`
+
+- [ ] basic
+
+#### `lib/formatting`
+
+- [x] Italics
+- [ ] Bold
+- [ ] Strikethrough
 
 <!-- ### [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) -->
 
@@ -27,7 +42,7 @@
 - [x] [Code of Conduct](https://docs.github.com/communities/setting-up-your-project-for-healthy-contributions/adding-a-code-of-conduct-to-your-project)
 - [x] Security Reporting
 - [ ] [Security Policy](https://docs.github.com/code-security/getting-started/adding-a-security-policy-to-your-repository)
-- [ ] [Contributing](https://docs.github.com/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors)
+- [x] [Contributing](https://docs.github.com/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors)
 - [ ] [Support Resources](https://docs.github.com/communities/setting-up-your-project-for-healthy-contributions/adding-support-resources-to-your-project)
 
 ### Templates
@@ -40,4 +55,5 @@
 - [x] Bug Report
 - [x] Feature Request
 - [ ] **FIX** Feature Request
-- [ ] Support Question
+- [x] Support Question
+- [ ] **Better** Support Docs
