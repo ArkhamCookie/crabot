@@ -17,12 +17,14 @@ var crabMorse = morse.NewConverter(
 	morse.WithTrailingSeparator(false),
 )
 
+// Convert the Morse code to "crab"
 func convert(text string) string {
 	text = strings.ReplaceAll(text, ".", "click")
 	text = strings.ReplaceAll(text, "-", "clack")
 	return text
 }
 
+// Get the *text* in "crab"
 func Get(text string) (string, error) {
 	// Confirm that text is given
 	if text == "" {
