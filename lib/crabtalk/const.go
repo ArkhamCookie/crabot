@@ -4,6 +4,8 @@ import (
 	"github.com/gSpera/morse"
 )
 
+// Morse code map using default for letters
+// but not converting anything else
 var crabMorse = morse.EncodingMap{
 	// Predefined Letters
 	'A': morse.A,
