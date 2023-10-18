@@ -2,9 +2,16 @@ package crabtalk
 
 import (
 	"errors"
+	"strings"
 
 	"github.com/gSpera/morse"
 )
+
+func convert(text string) (string) {
+	text = strings.ReplaceAll(text, ".", "click")
+	text = strings.ReplaceAll(text, "-", "clack")
+	return text
+}
 
 func Talk(text string) (string, error) {
 	// Confirm that text is given
@@ -15,5 +22,8 @@ func Talk(text string) (string, error) {
 	// Convert to morse code
 	textInMorse := morse.ToMorse(text)
 
-	return textInMorse, nil
+	// Convert to crab
+	textInCrab := convert(textInMorse)
+
+	return textInCrab, nil
 }
