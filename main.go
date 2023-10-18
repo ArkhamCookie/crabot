@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"crabot/crabtalk"
-	"crabot/formatting"
 )
 
 var (
