@@ -13,6 +13,8 @@ var discordMarkdownData = map[string]string{
 	"strikethough": "~~",
 }
 
+// Convert *test* into Discord markdown syntax
+// based on style given
 func DiscordMarkdown(text, style string) (string, error) {
 	// Confirm that text is given
 	if text == "" {
