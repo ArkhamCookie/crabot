@@ -19,7 +19,7 @@ Here is an example of crabtalk.
 ```text
 "Hello World"
 .... . .-.. .-.. --- / .-- --- .-. .-.. -..
-clickclickclickclick click clickclackclickclick clickclackclickclick clackclackclack   clickclackclack clackclackclack clickclackclick clickclackclickclick clackclickclick
+clickclickclickclick click clickclackclickclick clickclackclickclick clackclackclack / clickclackclack clackclackclack clickclackclick clickclackclickclick clackclickclick
 ```
 
 ---
