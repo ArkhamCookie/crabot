@@ -7,6 +7,7 @@ import (
 	"github.com/gSpera/morse"
 )
 
+// Settings for Morse code converter
 var crabConverter = morse.NewConverter(
 	crabMorse,
 

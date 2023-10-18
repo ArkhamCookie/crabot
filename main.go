@@ -11,8 +11,9 @@ var (
 	err     error
 )
 
+// Standin (for now) main function
 func main() {
-	// Convert message to morse and print it
+	// Convert 'Hello World!' to morse and print it
 	message, err = crabtalk.Get("Hello World!")
 	if err != nil {
 		fmt.Println("Error:", err)
