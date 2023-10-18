@@ -40,4 +40,5 @@
 - [x] Bug Report
 - [x] Feature Request
 - [ ] **FIX** Feature Request
-- [ ] Support Question
+- [x] Support Question
+- [ ] **Better** Support Docs
