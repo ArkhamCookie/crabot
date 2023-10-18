@@ -2,10 +2,13 @@
 
 ## Documentation
 
-### `lib/crabralk`
+### `lib/crabtalk`
 
 - [x] README.md
-- [ ] Documentation General
+
+### `lib/formatting`
+
+- [ ] README.md
 
 ## Continuous Integration
 
