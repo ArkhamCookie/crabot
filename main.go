@@ -4,11 +4,12 @@ import (
 	"fmt"
 
 	"crabot/crabtalk"
+	"crabot/formatting"
 )
 
 var (
 	message string
-	err error
+	err     error
 )
 
 func main() {
