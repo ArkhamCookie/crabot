@@ -8,7 +8,7 @@ import (
 )
 
 var crabConverter = morse.NewConverter(
-	morse.DefaultMorse,
+	crabMorse,
 
 	morse.WithCharSeparator("_"),
 	morse.WithWordSeparator(" / "),
@@ -36,6 +36,16 @@ func Get(text string) (string, error) {
 
 	// Convert to crab
 	text = convert(text)
+
+	return text, nil
+}
+
+//
+func Helper(text string) (string, error) {
+	// Confirm that text is given
+	if text == "" {
+		return "", errors.New("no text given")
+	}
 
 	return text, nil
 }
