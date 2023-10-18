@@ -10,7 +10,7 @@ import (
 var crabConverter = morse.NewConverter(
 	crabMorse,
 
-	morse.WithCharSeparator("_"),
+	morse.WithCharSeparator(" "),
 	morse.WithWordSeparator(" / "),
 	morse.WithLowercaseHandling(true),
 	morse.WithHandler(morse.IgnoreHandler),
@@ -21,7 +21,7 @@ var crabConverter = morse.NewConverter(
 func convert(text string) string {
 	text = strings.ReplaceAll(text, ".", "click")
 	text = strings.ReplaceAll(text, "-", "clack")
-	text = strings.ReplaceAll(text, "_ _", " / ") // Temporary until fix word separators
+	text = strings.ReplaceAll(text, "   ", " / ") // Temporary until fix word separators
 	return text
 }
 
