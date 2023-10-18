@@ -27,7 +27,7 @@
 - [x] [Code of Conduct](https://docs.github.com/communities/setting-up-your-project-for-healthy-contributions/adding-a-code-of-conduct-to-your-project)
 - [x] Security Reporting
 - [ ] [Security Policy](https://docs.github.com/code-security/getting-started/adding-a-security-policy-to-your-repository)
-- [ ] [Contributing](https://docs.github.com/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors)
+- [x] [Contributing](https://docs.github.com/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors)
 - [ ] [Support Resources](https://docs.github.com/communities/setting-up-your-project-for-healthy-contributions/adding-support-resources-to-your-project)
 
 ### Templates
