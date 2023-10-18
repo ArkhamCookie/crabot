@@ -1,6 +1,21 @@
 <!-- markdownlint-disable MD029 -->
 # Contributing
 
+Information on how you can help contribute to this project.
+
+## Table of Contents
+
+- [Contributing](#contributing)
+  - [Table of Contents](#table-of-contents)
+  - [Coding](#coding)
+    - [Setup Your Golang Environment](#setup-your-golang-environment)
+    - [New to Golang](#new-to-golang)
+  - [Writing Documentation](#writing-documentation)
+  - [Financially](#financially)
+    - [Direct Donation](#direct-donation)
+    - [Hire Me](#hire-me)
+      - [Website](#website)
+
 ## Coding
 
 ### Setup Your Golang Environment
