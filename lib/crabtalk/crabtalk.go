@@ -7,6 +7,16 @@ import (
 	"github.com/gSpera/morse"
 )
 
+var crabMorse = morse.NewConverter(
+	morse.DefaultMorse,
+
+	morse.WithCharSeparator("_"),
+	morse.WithWordSeparator(" / "),
+	morse.WithLowercaseHandling(true),
+	morse.WithHandler(morse.IgnoreHandler),
+	morse.WithTrailingSeparator(false),
+)
+
 func convert(text string) string {
 	text = strings.ReplaceAll(text, ".", "click")
 	text = strings.ReplaceAll(text, "-", "clack")
@@ -20,7 +30,7 @@ func Talk(text string) (string, error) {
 	}
 
 	// Convert to morse code
-	text = morse.ToMorse(text)
+	text = crabMorse.ToMorse(text)
 
 	// Convert to crab
 	text = convert(text)
