@@ -21,6 +21,7 @@ var crabConverter = morse.NewConverter(
 func convert(text string) string {
 	text = strings.ReplaceAll(text, ".", "click")
 	text = strings.ReplaceAll(text, "-", "clack")
+	text = strings.ReplaceAll(text, "_ _", " / ") // Temporary until fix word separators
 	return text
 }
 
@@ -36,16 +37,6 @@ func Get(text string) (string, error) {
 
 	// Convert to crab
 	text = convert(text)
-
-	return text, nil
-}
-
-//
-func Helper(text string) (string, error) {
-	// Confirm that text is given
-	if text == "" {
-		return "", errors.New("no text given")
-	}
 
 	return text, nil
 }
