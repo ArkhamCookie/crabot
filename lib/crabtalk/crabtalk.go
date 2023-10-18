@@ -20,10 +20,10 @@ func Talk(text string) (string, error) {
 	}
 
 	// Convert to morse code
-	textInMorse := morse.ToMorse(text)
+	text = morse.ToMorse(text)
 
 	// Convert to crab
-	textInCrab := convert(textInMorse)
+	text = convert(text)
 
-	return textInCrab, nil
+	return text, nil
 }
