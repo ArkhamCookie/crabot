@@ -63,7 +63,7 @@ var crabMorse = morse.EncodingMap{
 	'@':  "@",
 
 	// Misc. Predefined
-	' ':  morse.Space,
+	' ': morse.Space,
 
 	// Undefined Punctuation
 	'!': "!",
