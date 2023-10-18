@@ -12,6 +12,18 @@
 
 ## Continuous Integration
 
+### Golang Tests
+
+### `lib/crabtalk`
+
+- [ ] basic
+
+#### `lib/formatting`
+
+- [x] Italics
+- [ ] Bold
+- [ ] Strikethrough
+
 <!-- ### [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) -->
 
 ### GitHub Actions
