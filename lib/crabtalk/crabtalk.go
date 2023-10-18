@@ -23,7 +23,7 @@ func convert(text string) string {
 	return text
 }
 
-func Talk(text string) (string, error) {
+func Get(text string) (string, error) {
 	// Confirm that text is given
 	if text == "" {
 		return "", errors.New("no text given")

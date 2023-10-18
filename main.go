@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// Convert message to morse and print it
-	message, err := crabtalk.Talk("Hello World")
+	message, err := crabtalk.Get("Hello World")
 	if err != nil {
 		fmt.Println("Error:", err)
 	}
