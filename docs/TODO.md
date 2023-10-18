@@ -4,7 +4,7 @@
 
 ### `lib/crabralk`
 
-- [ ] README.md
+- [x] README.md
 - [ ] Documentation General
 
 ## Continuous Integration
