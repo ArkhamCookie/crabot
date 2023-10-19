@@ -84,12 +84,11 @@ var (
 			}
 
 			margs := make([]interface{}, 0, len(options))
-			msgformat := "Using command options! " +
-				"Values entered:\n"
+			msgformat := "Message in Crab: \n"
 
 			if option, ok := optionMap["text-to-translate"]; ok {
 				margs = append(margs, option.StringValue())
-				msgformat += "> textToTranslate: %s\n"
+				msgformat += "> %s\n"
 			}
 
 			session.InteractionRespond(interaction.Interaction, &discordgo.InteractionResponse{
