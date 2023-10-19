@@ -54,7 +54,7 @@ var (
 			Options: []*discordgo.ApplicationCommandOption{
 				{
 					Type: discordgo.ApplicationCommandOptionString,
-					Name: "textToTranslate",
+					Name: "text-to-translate",
 					Description: "Message to translate",
 					Required: true,
 				},
@@ -87,7 +87,7 @@ var (
 			msgformat := "Using command options! " +
 				"Values entered:\n"
 
-			if option, ok := optionMap["textToTranslate"]; ok {
+			if option, ok := optionMap["text-to-translate"]; ok {
 				margs = append(margs, option.StringValue())
 				msgformat += "> textToTranslate: %s\n"
 			}
