@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
 	"os"
 	"os/signal"
@@ -46,15 +47,58 @@ var (
 			Name:        "basic-command",
 			Description: "A basic test command",
 		},
+		{
+			// Crab talk command
+			Name: "crabtalk",
+			Description: "Translate your message to crab!",
+			Options: []*discordgo.ApplicationCommandOption{
+				{
+					Type: discordgo.ApplicationCommandOptionString,
+					Name: "textToTranslate",
+					Description: "Message to translate",
+					Required: true,
+				},
+			},
+		},
 	}
 
-	// Handles what to do when a command is ran?
+	// Handles what to do when a command is ran
 	commandHandlers = map[string]func(session *discordgo.Session, interaction *discordgo.InteractionCreate){
+		// basic-command handler
 		"basic-command": func(session *discordgo.Session, interaction *discordgo.InteractionCreate) {
 			session.InteractionRespond(interaction.Interaction, &discordgo.InteractionResponse{
 				Type: discordgo.InteractionResponseChannelMessageWithSource,
 				Data: &discordgo.InteractionResponseData{
 					Content: "This is a basic test command.",
+				},
+			})
+		},
+		"crabtalk": func(session *discordgo.Session, interaction *discordgo.InteractionCreate) {
+			// Access input
+			options := interaction.ApplicationCommandData().Options
+
+			// Convert slice (options) into map
+			optionMap := make(map[string]*discordgo.ApplicationCommandInteractionDataOption, len(options))
+			for _, opt := range options {
+				optionMap[opt.Name] = opt
+			}
+
+			margs := make([]interface{}, 0, len(options))
+			msgformat := "Using command options! " +
+				"Values entered:\n"
+
+			if option, ok := optionMap["textToTranslate"]; ok {
+				margs = append(margs, option.StringValue())
+				msgformat += "> textToTranslate: %s\n"
+			}
+
+			session.InteractionRespond(interaction.Interaction, &discordgo.InteractionResponse{
+				Type: discordgo.InteractionResponseChannelMessageWithSource,
+				Data: &discordgo.InteractionResponseData{
+					Content: fmt.Sprintf(
+						msgformat,
+						margs...,
+					),
 				},
 			})
 		},
