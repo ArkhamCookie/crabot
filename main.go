@@ -26,6 +26,12 @@ func init() { flag.Parse() }
 // Start session
 func init() {
 	var err error
+
+	// Confirm token is entered
+	if *BotToken == "" {
+		log.Fatalln("Error: token required")
+	}
+
 	session, err = discordgo.New("Bot " + *BotToken)
 	if err != nil {
 		log.Fatalln("Invaild bot parameters:", err)
