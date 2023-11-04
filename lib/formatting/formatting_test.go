@@ -54,6 +54,16 @@ func TestMarkdownStrikethough(t *testing.T) {
 	}
 }
 
+func TestMarkdownBlockquote(t *testing.T) {
+	input = "crabot/formatting foo test!"
+	want = "> " + input
+
+	output = formatting.Blockquote(input)
+	if want != output {
+		t.Fatalf(`formatting.Foo(%q) = %q, want match for %#q`, input, output, want)
+	}
+}
+
 // TestMarkdown Template
 /*
 func TestMarkdownFoo(t *testing.T) {
