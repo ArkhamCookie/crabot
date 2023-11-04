@@ -7,8 +7,8 @@ import (
 )
 
 var (
-	input string
-	want string
+	input  string
+	want   string
 	output string
 )
 
