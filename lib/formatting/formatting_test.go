@@ -34,6 +34,7 @@ func TestMarkdownBold(t *testing.T) {
 	}
 }
 
+// Bold+Italic Test
 func TestMarkdownBoldItalic(t *testing.T) {
 	input = "crabot/formatting bold italic test!"
 	want = "***" + input + "***"
@@ -44,6 +45,7 @@ func TestMarkdownBoldItalic(t *testing.T) {
 	}
 }
 
+// Strikethough Test
 func TestMarkdownStrikethough(t *testing.T) {
 	input = "crabot/formatting strikethough test!"
 	want = "~~" + input + "~~"
@@ -54,6 +56,7 @@ func TestMarkdownStrikethough(t *testing.T) {
 	}
 }
 
+// Blockquote Test
 func TestMarkdownBlockquote(t *testing.T) {
 	input = "crabot/formatting foo test!"
 	want = "> " + input
