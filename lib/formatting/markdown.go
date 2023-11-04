@@ -1,37 +1,11 @@
 package formatting
 
-import (
-	"errors"
-)
+func surround(markdownData string, text string) string { return markdownData + text + markdownData }
 
-// Discord's markdown syntax
-var discordMarkdownData = map[string]string{
-	"italic":     "*",
-	"bold":       "**",
-	"boldItalic": "***",
+// Surround Markdown
+func Italic(input string) string       { return surround("*", input) }
+func Bold(input string) string         { return surround("**", input) }
+func BoldItalic(input string) string   { return surround("***", input) }
+func Strikethough(input string) string { return surround("~~", input) }
 
-	"strikethough": "~~",
-}
-
-// Convert *test* into Discord markdown syntax
-// based on style given
-func DiscordMarkdown(text, style string) (string, error) {
-	// Confirm that text is given
-	if text == "" {
-		return "", errors.New("no text given")
-	}
-	// Confirm that style type is given
-	if style == "" {
-		return "", errors.New("no style given")
-	}
-	// Confirm style type exists
-	_, ok := discordMarkdownData[style]
-	if !ok {
-		return "", errors.New("given style type doesn't exist")
-	}
-
-	// Transform based on style
-	output := discordMarkdownData[style] + text + discordMarkdownData[style]
-
-	return output, nil
-}
+func BlockQuote(input string) string { return "> " + input }
