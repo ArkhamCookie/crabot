@@ -1,5 +1,9 @@
 # Todo
 
+## Crabot General
+
+- [ ] Improve Error formatting
+
 ## Documentation
 
 ### `lib/crabtalk`
