@@ -31,7 +31,10 @@ func init() {
 
 	// Confirm token is entered
 	if *BotToken == "" {
-		log.Fatalln("Error: token required")
+		log.Fatalln(
+			"Error: token required",
+			"\nUsage: crabot -token <TOKEN>",
+		)
 	}
 
 	session, err = discordgo.New("Bot " + *BotToken)
