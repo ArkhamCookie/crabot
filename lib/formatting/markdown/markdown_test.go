@@ -1,4 +1,4 @@
-package formatting_test
+package markdown_test
 
 import (
 	"testing"
@@ -11,8 +11,6 @@ var (
 	want   string
 	output string
 )
-
-// Markdown pkg Testing Start
 
 // Italic Test
 func TestMarkdownItalic(t *testing.T) {
@@ -94,4 +92,15 @@ func TestMarkdownUnorderedList(t *testing.T) {
 	}
 }
 
-// Markdown pkg Testing End
+// TestMarkdown Template
+/*
+func TestMarkdownFoo(t *testing.T) {
+	input = "formatting/markdown foo test!"
+	want = input
+
+	output = markdown.Foo(input)
+	if want != output {
+		t.Fatalf(`markdown.Foo(%q) = %q, want match for %#q`, input, output, want)
+	}
+}
+*/
