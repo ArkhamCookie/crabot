@@ -67,6 +67,31 @@ func TestMarkdownBlockquote(t *testing.T) {
 	}
 }
 
+// Unordered List Test
+func TestMarkdownUnorderedList(t *testing.T) {
+	input = "crabot/formatting unordered list test!"
+	want = "- crabot/formatting unordered list test!"
+
+	output = formatting.UnorderedList(input, 0)
+	if want != output {
+		t.Fatalf(`formatting.UnorderedList(%q) = %q, want match for %#q`, input, output, want)
+	}
+
+	input = "1 indented item"
+	want = "  - 1 indented item"
+	output = formatting.UnorderedList(input, 1)
+	if want != output {
+		t.Fatalf(`formatting.UnorderedList(%q) = %q, want match for %#q`, input, output, want)
+	}
+
+	input = "2 indented item"
+	want = "    - 2 indented item"
+	output = formatting.UnorderedList(input, 2)
+	if want != output {
+		t.Fatalf(`formatting.UnorderedList(%q) = %q, want match for %#q`, input, output, want)
+	}
+}
+
 // TestMarkdown Template
 /*
 func TestMarkdownFoo(t *testing.T) {
