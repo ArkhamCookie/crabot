@@ -16,7 +16,7 @@ var (
 
 // Italic Test
 func TestMarkdownItalic(t *testing.T) {
-	input = "crabot/formatting italic test!"
+	input = "formatting/markdown italic test!"
 	want = "*" + input + "*"
 
 	output = markdown.Italic(input)
@@ -27,7 +27,7 @@ func TestMarkdownItalic(t *testing.T) {
 
 // Bold Test
 func TestMarkdownBold(t *testing.T) {
-	input = "crabot/formatting bold test!"
+	input = "formatting/markdown bold test!"
 	want = "**" + input + "**"
 
 	output = markdown.Bold(input)
@@ -38,7 +38,7 @@ func TestMarkdownBold(t *testing.T) {
 
 // Bold+Italic Test
 func TestMarkdownBoldItalic(t *testing.T) {
-	input = "crabot/formatting bold italic test!"
+	input = "formatting/markdown bold italic test!"
 	want = "***" + input + "***"
 
 	output = markdown.BoldItalic(input)
@@ -49,7 +49,7 @@ func TestMarkdownBoldItalic(t *testing.T) {
 
 // Strikethough Test
 func TestMarkdownStrikethough(t *testing.T) {
-	input = "crabot/formatting strikethough test!"
+	input = "formatting/markdown strikethough test!"
 	want = "~~" + input + "~~"
 
 	output = markdown.Strikethough(input)
@@ -60,7 +60,7 @@ func TestMarkdownStrikethough(t *testing.T) {
 
 // Blockquote Test
 func TestMarkdownBlockquote(t *testing.T) {
-	input = "crabot/formatting foo test!"
+	input = "formatting/markdown foo test!"
 	want = "> " + input
 
 	output = markdown.Blockquote(input)
@@ -71,8 +71,8 @@ func TestMarkdownBlockquote(t *testing.T) {
 
 // Unordered List Test
 func TestMarkdownUnorderedList(t *testing.T) {
-	input = "crabot/formatting unordered list test!"
-	want = "- crabot/formatting unordered list test!"
+	input = "formatting/markdown unordered list test!"
+	want = "- formatting/markdown unordered list test!"
 
 	output = markdown.UnorderedList(input, 0)
 	if want != output {
