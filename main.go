@@ -7,6 +7,7 @@ import (
 	"os"
 	"os/signal"
 
+	"crabot/crabtalk"
 	"formatting/markdown"
 
 	"github.com/bwmarrin/discordgo"
@@ -95,21 +96,21 @@ var (
 			}
 
 			margs := make([]interface{}, 0, len(options))
-			msgformat := "Message in Crab: \n"
+			msgformat := "\nMessage in Crab: \n"
 
 			if option, ok := optionMap["text-to-translate"]; ok {
 				margs = append(margs, option.StringValue())
-				msgformat += markdown.Blockquote("%s")
+				margsString := fmt.Sprint(margs)
+
+				translatedText, _ := crabtalk.Get(margsString)
+				msgformat += markdown.Blockquote(translatedText)
 				msgformat += "\n"
 			}
 
 			session.InteractionRespond(interaction.Interaction, &discordgo.InteractionResponse{
 				Type: discordgo.InteractionResponseChannelMessageWithSource,
 				Data: &discordgo.InteractionResponseData{
-					Content: fmt.Sprintf(
-						msgformat,
-						margs...,
-					),
+					Content: msgformat,
 				},
 			})
 		},
