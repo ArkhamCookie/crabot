@@ -1,4 +1,4 @@
-package formatting
+package markdown
 
 // Format input into italic markdown style
 func Italic(input string) string { return "*" + input + "*" }

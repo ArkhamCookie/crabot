@@ -1,9 +1,9 @@
-package formatting_test
+package markdown_test
 
 import (
 	"testing"
 
-	"crabot/formatting"
+	"formatting/markdown"
 )
 
 var (
@@ -17,9 +17,9 @@ func TestMarkdownItalic(t *testing.T) {
 	input = "crabot/formatting italic test!"
 	want = "*" + input + "*"
 
-	output = formatting.Italic(input)
+	output = markdown.Italic(input)
 	if want != output {
-		t.Fatalf(`formatting.Italic(%q) = %q, want match for %#q`, input, output, want)
+		t.Fatalf(`markdown.Italic(%q) = %q, want match for %#q`, input, output, want)
 	}
 }
 
@@ -28,9 +28,9 @@ func TestMarkdownBold(t *testing.T) {
 	input = "crabot/formatting bold test!"
 	want = "**" + input + "**"
 
-	output = formatting.Bold(input)
+	output = markdown.Bold(input)
 	if want != output {
-		t.Fatalf(`formatting.Bold(%q) = %q, want match for %#q`, input, output, want)
+		t.Fatalf(`markdown.Bold(%q) = %q, want match for %#q`, input, output, want)
 	}
 }
 
@@ -39,9 +39,9 @@ func TestMarkdownBoldItalic(t *testing.T) {
 	input = "crabot/formatting bold italic test!"
 	want = "***" + input + "***"
 
-	output = formatting.BoldItalic(input)
+	output = markdown.BoldItalic(input)
 	if want != output {
-		t.Fatalf(`formatting.BoldItalic(%q) = %q, want match for %#q`, input, output, want)
+		t.Fatalf(`markdown.BoldItalic(%q) = %q, want match for %#q`, input, output, want)
 	}
 }
 
@@ -50,9 +50,9 @@ func TestMarkdownStrikethough(t *testing.T) {
 	input = "crabot/formatting strikethough test!"
 	want = "~~" + input + "~~"
 
-	output = formatting.Strikethough(input)
+	output = markdown.Strikethough(input)
 	if want != output {
-		t.Fatalf(`formatting.Strikethough(%q) = %q, want match for %#q`, input, output, want)
+		t.Fatalf(`markdown.Strikethough(%q) = %q, want match for %#q`, input, output, want)
 	}
 }
 
@@ -61,9 +61,9 @@ func TestMarkdownBlockquote(t *testing.T) {
 	input = "crabot/formatting foo test!"
 	want = "> " + input
 
-	output = formatting.Blockquote(input)
+	output = markdown.Blockquote(input)
 	if want != output {
-		t.Fatalf(`formatting.Foo(%q) = %q, want match for %#q`, input, output, want)
+		t.Fatalf(`markdown.Foo(%q) = %q, want match for %#q`, input, output, want)
 	}
 }
 
@@ -72,23 +72,23 @@ func TestMarkdownUnorderedList(t *testing.T) {
 	input = "crabot/formatting unordered list test!"
 	want = "- crabot/formatting unordered list test!"
 
-	output = formatting.UnorderedList(input, 0)
+	output = markdown.UnorderedList(input, 0)
 	if want != output {
-		t.Fatalf(`formatting.UnorderedList(%q) = %q, want match for %#q`, input, output, want)
+		t.Fatalf(`markdown.UnorderedList(%q) = %q, want match for %#q`, input, output, want)
 	}
 
 	input = "1 indented item"
 	want = "  - 1 indented item"
-	output = formatting.UnorderedList(input, 1)
+	output = markdown.UnorderedList(input, 1)
 	if want != output {
-		t.Fatalf(`formatting.UnorderedList(%q) = %q, want match for %#q`, input, output, want)
+		t.Fatalf(`markdown.UnorderedList(%q) = %q, want match for %#q`, input, output, want)
 	}
 
 	input = "2 indented item"
 	want = "    - 2 indented item"
-	output = formatting.UnorderedList(input, 2)
+	output = markdown.UnorderedList(input, 2)
 	if want != output {
-		t.Fatalf(`formatting.UnorderedList(%q) = %q, want match for %#q`, input, output, want)
+		t.Fatalf(`markdown.UnorderedList(%q) = %q, want match for %#q`, input, output, want)
 	}
 }
 
@@ -98,9 +98,9 @@ func TestMarkdownFoo(t *testing.T) {
 	input = "crabot/formatting foo test!"
 	want = input
 
-	output = formatting.Foo(input)
+	output = markdown.Foo(input)
 	if want != output {
-		t.Fatalf(`formatting.Foo(%q) = %q, want match for %#q`, input, output, want)
+		t.Fatalf(`markdown.Foo(%q) = %q, want match for %#q`, input, output, want)
 	}
 }
 */

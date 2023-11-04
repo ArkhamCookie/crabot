@@ -1,4 +1,4 @@
-package formatting
+package markdown
 
 // Add an item to an Unordered List
 func UnorderedList(input string, indent int) string {
