@@ -4,6 +4,7 @@ go 1.20
 
 require (
 	// crabot/crabtalk v0.0.0
+	formatting/markdown v0.0.0
 )
 
 require github.com/bwmarrin/discordgo v0.27.1

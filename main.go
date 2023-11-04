@@ -7,6 +7,8 @@ import (
 	"os"
 	"os/signal"
 
+	"formatting/markdown"
+
 	"github.com/bwmarrin/discordgo"
 )
 
@@ -94,7 +96,8 @@ var (
 
 			if option, ok := optionMap["text-to-translate"]; ok {
 				margs = append(margs, option.StringValue())
-				msgformat += "> %s\n"
+				msgformat += markdown.Blockquote("%s")
+				msgformat += "\n"
 			}
 
 			session.InteractionRespond(interaction.Interaction, &discordgo.InteractionResponse{
