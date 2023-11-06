@@ -15,7 +15,7 @@ var (
 
 func TestGetEnvValue(t *testing.T) {
 	inputValue := "GET_TEST"
-	inputFile := ".env.test"
+	inputFile := "test.env"
 	want = "load-test-successful"
 
 	output, err = env.GetEnvValue(inputValue, inputFile)
