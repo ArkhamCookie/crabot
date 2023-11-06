@@ -21,6 +21,7 @@ require (
 replace (
 	crabot/crabtalk => ./lib/crabtalk
 	crabot/dice => ./lib/dice
+	internal/dice => ./lib/dice/internal
 	crabot/formatting => ./lib/formatting
 	formatting/markdown => ./lib/formatting/markdown
 	internal/env => ./internal/env
