@@ -9,6 +9,7 @@ import (
 
 	"crabot/crabtalk"
 	"formatting/markdown"
+	"internal/env"
 
 	"github.com/bwmarrin/discordgo"
 )
@@ -32,10 +33,10 @@ func init() {
 
 	// Confirm token is entered
 	if *BotToken == "" {
-		log.Fatalln(
-			"Error: token required",
-			"\nUsage: crabot -token <TOKEN>",
-		)
+		*BotToken, err = env.GetEnvValue("TOKEN", "")
+		if err != nil {
+			log.Fatalln("Error occured while getting the token", err)
+		}
 	}
 
 	session, err = discordgo.New("Bot " + *BotToken)
