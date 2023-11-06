@@ -31,8 +31,9 @@ func init() { flag.Parse() }
 func init() {
 	var err error
 
-	// Confirm token is entered
+	// Check if token is entered.
 	if *BotToken == "" {
+		// If token isn't entered, get token from env file.
 		*BotToken, err = env.GetEnvValue("TOKEN", "")
 		if err != nil {
 			log.Fatalln("Error occured while getting the token", err)
