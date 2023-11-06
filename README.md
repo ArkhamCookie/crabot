@@ -15,3 +15,5 @@ Whether you need a basic Discord bot in a *pinch* or want to spice up your serve
 
 - [crabtalk](/lib/crabtalk/)
   — Communicate in crab!
+- [dice](/lib/dice/)
+  <!-- — *description* -->
