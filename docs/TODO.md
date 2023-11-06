@@ -2,6 +2,17 @@
 
 <!-- ## Crabot General -->
 
+## `lib/dice`
+
+- [ ] d2 (coin)
+- [ ] d4
+- [ ] d6
+- [ ] d8
+- [ ] d10
+- [ ] d100 (d10 x 10)
+- [ ] d12
+- [ ] d20
+
 ## Documentation
 
 ### `lib/crabtalk`
