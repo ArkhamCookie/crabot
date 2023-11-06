@@ -1,8 +1,6 @@
 # Todo
 
-## Crabot General
-
-- [ ] Improve Error formatting
+<!-- ## Crabot General -->
 
 ## Documentation
 
@@ -14,19 +12,28 @@
 
 - [ ] README.md
 
+## Examples
+
+- [ ] crabtalk
+- [ ] formatting
+
 ## Continuous Integration
 
 ### Golang Tests
 
 #### `lib/crabtalk`
 
-- [ ] basic
+- [x] basic
 
 #### `lib/formatting`
 
 - [x] Italics
-- [ ] Bold
-- [ ] Strikethrough
+- [x] Bold
+- [x] Bold + Italic
+- [x] Strikethrough
+- [x] Blockquote
+- [x] Unordered List
+- [ ] Ordered List
 
 <!-- ### [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) -->
 
