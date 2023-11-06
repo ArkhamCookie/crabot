@@ -63,14 +63,14 @@ var (
 		},
 		{
 			// Crab talk command
-			Name: "crabtalk",
+			Name:        "crabtalk",
 			Description: "Translate your message to crab!",
 			Options: []*discordgo.ApplicationCommandOption{
 				{
-					Type: discordgo.ApplicationCommandOptionString,
-					Name: "text-to-translate",
+					Type:        discordgo.ApplicationCommandOptionString,
+					Name:        "text-to-translate",
 					Description: "Message to translate",
-					Required: true,
+					Required:    true,
 				},
 			},
 		},
