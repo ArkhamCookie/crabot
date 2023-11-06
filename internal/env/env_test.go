@@ -30,7 +30,7 @@ func TestGetEnvValue(t *testing.T) {
 	}
 }
 
-// Test trying to get a value that doesn't exist
+// Test trying to get a value that doesn't exist.
 func TestGetEmptyValue(t *testing.T) {
 	inputValue := "GET_FALSE"
 	inputFile := "test.env"
