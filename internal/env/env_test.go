@@ -7,10 +7,9 @@ import (
 )
 
 var (
-	err error
-	// input string
+	err    error
 	output string
-	want string
+	want   string
 )
 
 func TestGetEnvValue(t *testing.T) {
