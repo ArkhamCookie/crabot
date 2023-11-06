@@ -29,3 +29,14 @@ func TestGetEnvValue(t *testing.T) {
 		)
 	}
 }
+
+func TestGetEmptyValue(t *testing.T) {
+	inputValue := "GET_FALSE"
+	inputFile := "test.env"
+	want = ""
+
+	output, err = env.GetEnvValue(inputValue, inputFile)
+	if err == nil {
+		t.Fatal("Error: error should have been thrown")
+	}
+}
