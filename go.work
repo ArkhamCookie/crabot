@@ -3,6 +3,7 @@ go 1.20
 use (
 	.
 	./lib/crabtalk
+	./lib/dice
 	./lib/formatting
 	./lib/formatting/markdown
 

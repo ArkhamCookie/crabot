@@ -20,6 +20,7 @@ require (
 
 replace (
 	crabot/crabtalk => ./lib/crabtalk
+	crabot/dice => ./lib/dice
 	crabot/formatting => ./lib/formatting
 	formatting/markdown => ./lib/formatting/markdown
 	internal/env => ./internal/env
