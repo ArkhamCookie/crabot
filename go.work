@@ -5,4 +5,6 @@ use (
 	./lib/crabtalk
 	./lib/formatting
 	./lib/formatting/markdown
+
+	./internal/env
 )

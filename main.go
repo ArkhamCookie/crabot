@@ -9,6 +9,7 @@ import (
 
 	"crabot/crabtalk"
 	"formatting/markdown"
+	"internal/env"
 
 	"github.com/bwmarrin/discordgo"
 )
@@ -30,12 +31,13 @@ func init() { flag.Parse() }
 func init() {
 	var err error
 
-	// Confirm token is entered
+	// Check if token is entered.
 	if *BotToken == "" {
-		log.Fatalln(
-			"Error: token required",
-			"\nUsage: crabot -token <TOKEN>",
-		)
+		// If token isn't entered, get token from env file.
+		*BotToken, err = env.GetEnvValue("TOKEN", "")
+		if err != nil {
+			log.Fatalln("Error occurred while getting the token", err)
+		}
 	}
 
 	session, err = discordgo.New("Bot " + *BotToken)
@@ -61,14 +63,14 @@ var (
 		},
 		{
 			// Crab talk command
-			Name: "crabtalk",
+			Name:        "crabtalk",
 			Description: "Translate your message to crab!",
 			Options: []*discordgo.ApplicationCommandOption{
 				{
-					Type: discordgo.ApplicationCommandOptionString,
-					Name: "text-to-translate",
+					Type:        discordgo.ApplicationCommandOptionString,
+					Name:        "text-to-translate",
 					Description: "Message to translate",
-					Required: true,
+					Required:    true,
 				},
 			},
 		},
