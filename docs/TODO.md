@@ -4,7 +4,8 @@
 
 ## `lib/dice`
 
-- [ ] d2 (coin)
+- [x] coin
+- [x] d2
 - [ ] d4
 - [ ] d6
 - [ ] d8
