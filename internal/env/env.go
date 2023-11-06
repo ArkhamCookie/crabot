@@ -20,7 +20,7 @@ func GetEnvValue(target string, file string) (string, error) {
 	err := godotenv.Load(file)
 	// Check for errors in loading env file
 	if err != nil {
-		log.Fatalln("Some error occured. Error:", err)
+		log.Fatalln("Some error occurred. Error:", err)
 	}
 
 	// Get target value

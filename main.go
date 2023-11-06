@@ -36,7 +36,7 @@ func init() {
 		// If token isn't entered, get token from env file.
 		*BotToken, err = env.GetEnvValue("TOKEN", "")
 		if err != nil {
-			log.Fatalln("Error occured while getting the token", err)
+			log.Fatalln("Error occurred while getting the token", err)
 		}
 	}
 
