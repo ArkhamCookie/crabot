@@ -35,6 +35,9 @@ func TestGetEmptyValue(t *testing.T) {
 
 	output, err = env.GetEnvValue(inputValue, inputFile)
 	if err == nil {
-		t.Fatal("Error: error should have been thrown")
+		t.Fatalf(
+			`env.GetEnvValue(%q, %q) = %q, wanted error to be thrown`,
+			inputValue, inputFile, output,
+		)
 	}
 }
