@@ -20,4 +20,5 @@ replace (
 	crabot/crabtalk => ./lib/crabtalk
 	crabot/formatting => ./lib/formatting
 	formatting/markdown => ./lib/formatting/markdown
+	internal/env => ./internal/env
 )
