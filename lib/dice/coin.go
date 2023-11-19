@@ -1,28 +1,40 @@
 package dice
 
-import "internal/dice"
+import (
+	"errors"
+
+	"internal/dice"
+)
 
 // Flip a coin and get heads or tails.
-// Optionally, you can 'call it in the air' by selecting heads or tails.
-// If you 'call' it correctly, Coin function returns true.
-func Coin(call string) (string, bool) {
-	var side string
+func CoinFlip() (string, error) {
 	// Flip the coin (roll d2).
 	value := dice.Roll(2)
 
 	// Set side depending on roll.
 	switch value {
 	case 1:
-		side = "heads"
+		return "heads", nil
 	case 2:
-		side = "tails"
+		return "tails", nil
+	}
+	return "", errors.New("Error flipping coin")
+}
+
+// Optionally, you can 'call it in the air' by selecting heads or tails.
+// If you 'call' it correctly, Coin function returns true.
+func CoinCall(call string) (string, bool, error) {
+	// Flip a coin and get the result
+	side, err := CoinFlip()
+	if err != nil {
+		return "", false, err
 	}
 
-	// Check if user guessed the side correctly.
-	// If they did, then return true.
-	if call == side {
-		return side, true
+	// If called correct, then return true.
+	if side == call {
+		return side, false, nil
 	}
-	// If called wrong (or not called), then return false.
-	return side, false
+
+	// If called wrong, then return false.
+	return side, false, nil
 }
