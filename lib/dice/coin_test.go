@@ -10,7 +10,7 @@ import (
 func TestCoinFlip(t *testing.T) {
 	// Flip the coin
 	result, err := dice.CoinFlip()
-	
+	// Confirm no error occurs
 	if err != nil {
 		log.Fatalln("Error:", err)
 	}
