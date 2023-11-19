@@ -7,8 +7,6 @@ import (
 )
 
 // Flip a coin and get heads or tails.
-// Optionally, you can 'call it in the air' by selecting heads or tails.
-// If you 'call' it correctly, Coin function returns true.
 func CoinFlip() (string, error) {
 	// Flip the coin (roll d2).
 	value := dice.Roll(2)
@@ -23,6 +21,8 @@ func CoinFlip() (string, error) {
 	return "", errors.New("Error flipping coin")
 }
 
+// Optionally, you can 'call it in the air' by selecting heads or tails.
+// If you 'call' it correctly, Coin function returns true.
 func CoinCall(call string) (string, bool, error) {
 	// Flip a coin and get the result
 	side, err := CoinFlip()
