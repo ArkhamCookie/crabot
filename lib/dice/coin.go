@@ -18,7 +18,7 @@ func CoinFlip() (string, error) {
 	case 2:
 		return "tails", nil
 	}
-	return "", errors.New("Error flipping coin")
+	return "", errors.New("issue flipping coin")
 }
 
 // Optionally, you can 'call it in the air' by selecting heads or tails.
