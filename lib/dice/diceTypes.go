@@ -89,6 +89,7 @@ func D00(count int) int {
 		}
 
 		result = a + b
+		count--
 	}
 	return result
 }
