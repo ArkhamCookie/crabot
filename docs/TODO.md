@@ -29,10 +29,15 @@
 
 - [ ] README.md
 
+### `lib/dice`
+
+- [ ] README.md
+
 ## Examples
 
 - [ ] crabtalk
 - [ ] formatting
+- [ ] dice
 
 ## Continuous Integration
 
