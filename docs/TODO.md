@@ -41,6 +41,11 @@
 
 ## Continuous Integration
 
+### Linting
+
+- [ ] gofmt
+- [ ] goreportcard
+
 ### Golang Tests
 
 #### `lib/crabtalk`
