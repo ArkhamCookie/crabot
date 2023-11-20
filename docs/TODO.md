@@ -35,6 +35,36 @@
 - [x] Unordered List
 - [ ] Ordered List
 
+#### `lib/dice`
+
+- [ ] Dice Types
+  - [x] D2
+  - [x] D4
+  - [x] D6
+  - [x] D8
+  - [x] D10
+  - [x] D12
+  - [x] D20
+  - [ ] D00
+- [x] Coin
+  - [x] Flip
+  - [x] Call
+
+##### Tests
+
+- [ ] Dice Types
+  - [ ] D2
+  - [ ] D4
+  - [ ] D6
+  - [ ] D8
+  - [ ] D10
+  - [ ] D12
+  - [ ] D20
+  - [ ] D00
+- [ ] Coin
+  - [x] Flip
+  - [ ] Call
+
 <!-- ### [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) -->
 
 ### GitHub Actions
