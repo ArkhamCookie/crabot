@@ -70,3 +70,25 @@ func D20(count int) int {
 	}
 	return result
 }
+
+// Can only roll one at a time for the moment
+func D00(count int) int {
+	for count > 0 {
+		a := dice.Roll(10)
+
+		if a == 10 {
+			a = 0
+		} else {
+			a = a * 10
+		}
+
+		b := dice.Roll(10)
+
+		if b == 1 && a == 0 {
+			return 100
+		}
+
+		result = a + b
+	}
+	return result
+}
