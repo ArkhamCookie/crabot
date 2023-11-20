@@ -2,6 +2,23 @@
 
 <!-- ## Crabot General -->
 
+## Libs
+
+### `lib/dice`
+
+- [ ] Dice Types
+  - [x] D2
+  - [x] D4
+  - [x] D6
+  - [x] D8
+  - [x] D10
+  - [x] D12
+  - [x] D20
+  - [ ] D00
+- [x] Coin
+  - [x] Flip
+  - [x] Call
+
 ## Documentation
 
 ### `lib/crabtalk`
@@ -35,22 +52,7 @@
 - [x] Unordered List
 - [ ] Ordered List
 
-#### `lib/dice`
-
-- [ ] Dice Types
-  - [x] D2
-  - [x] D4
-  - [x] D6
-  - [x] D8
-  - [x] D10
-  - [x] D12
-  - [x] D20
-  - [ ] D00
-- [x] Coin
-  - [x] Flip
-  - [x] Call
-
-##### Tests
+##### `lib/dice`
 
 - [ ] Dice Types
   - [ ] D2
