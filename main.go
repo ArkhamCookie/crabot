@@ -8,7 +8,7 @@ import (
 	"os/signal"
 
 	"crabot/crabtalk"
-	"formatting/markdown"
+	"crabot/formatting/markdown"
 	"internal/env"
 
 	"github.com/bwmarrin/discordgo"

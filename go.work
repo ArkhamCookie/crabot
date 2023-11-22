@@ -4,7 +4,7 @@ use (
 	.
 	./lib/crabtalk
 	./lib/dice
-	./lib/dice/internal
+	./lib/dice/roll
 	./lib/formatting
 	./lib/formatting/markdown
 

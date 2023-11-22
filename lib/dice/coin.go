@@ -3,13 +3,13 @@ package dice
 import (
 	"errors"
 
-	"internal/dice"
+	"dice/roll"
 )
 
 // Flip a coin and get heads or tails.
 func CoinFlip() (string, error) {
 	// Flip the coin (roll d2).
-	value := dice.Roll(2)
+	value := roll.Roll(2)
 
 	// Set side depending on roll.
 	switch value {

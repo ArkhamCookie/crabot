@@ -4,13 +4,14 @@ go 1.20
 
 require (
 	crabot/crabtalk v0.0.0
-	formatting/markdown v0.0.0
+	crabot/formatting/markdown v0.0.0
 	internal/env v0.0.0
 )
 
 require github.com/bwmarrin/discordgo v0.27.1
 
 require (
+	crabot/dice/roll v0.0.0-00010101000000-000000000000 // indirect
 	github.com/gSpera/morse v1.1.2 // indirect
 	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
@@ -21,8 +22,8 @@ require (
 replace (
 	crabot/crabtalk => ./lib/crabtalk
 	crabot/dice => ./lib/dice
-	internal/dice => ./lib/dice/internal
+	crabot/dice/roll => ./lib/dice/roll
 	crabot/formatting => ./lib/formatting
-	formatting/markdown => ./lib/formatting/markdown
+	crabot/formatting/markdown => ./lib/formatting/markdown
 	internal/env => ./internal/env
 )
