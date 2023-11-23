@@ -1,7 +1,7 @@
 package dice
 
 import (
-	"dice/roll"
+	"crabot/dice/roll"
 )
 
 var (

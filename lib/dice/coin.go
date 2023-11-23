@@ -3,7 +3,7 @@ package dice
 import (
 	"errors"
 
-	"dice/roll"
+	"crabot/dice/roll"
 )
 
 // Flip a coin and get heads or tails.
