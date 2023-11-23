@@ -6,7 +6,7 @@ import (
 	"crabot/dice/roll"
 )
 
-// Flip a coin and get heads or tails.
+// CoinFlip flips a coin and get heads or tails.
 func CoinFlip() (string, error) {
 	// Flip the coin (roll d2).
 	value := roll.Roll(2)
@@ -21,8 +21,9 @@ func CoinFlip() (string, error) {
 	return "", errors.New("issue flipping coin")
 }
 
-// Optionally, you can 'call it in the air' by selecting heads or tails.
-// If you 'call' it correctly, Coin function returns true.
+// CoinCall allows you to 'call' the result of CoinFlip 'in the air'
+// by selecting heads or tails.
+// If you 'call' it correctly, CoinCall returns true.
 func CoinCall(call string) (string, bool, error) {
 	// Flip a coin and get the result
 	side, err := CoinFlip()
