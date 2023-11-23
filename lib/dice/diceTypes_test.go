@@ -1,6 +1,7 @@
 package dice_test
 
 import (
+	"fmt"
 	"testing"
 
 	"crabot/dice"
@@ -8,6 +9,7 @@ import (
 
 var (
 	result int
+	resultCount string
 )
 
 func TestD2(t *testing.T) {
@@ -36,4 +38,14 @@ func TestD2(t *testing.T) {
 	if result > 2 {
 		t.Fatal("dice.D2 was greater than 2")
 	}
+}
+
+func TestD00(t *testing.T) {
+	results := dice.D00(resultCount)
+
+	if results < 0 {
+		t.Fatal("dice.D00 was negitive")
+	}
+
+	fmt.Println("results:", results)
 }

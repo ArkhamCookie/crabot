@@ -1,6 +1,8 @@
 package dice
 
 import (
+	"fmt"
+
 	"crabot/dice/roll"
 )
 
@@ -71,8 +73,13 @@ func D20(count int) int {
 	return result
 }
 
-// Can only roll one at a time for the moment
-func D00(count int) int {
+// D00 rolls a D00 (percentile dice)
+func D00(count int) []int {
+	// Create the results array
+	results := make([]int, count)
+	fmt.Println(results)
+
+	// Get *count* number of results
 	for count > 0 {
 		// Roll a D10
 		a := roll.Roll(10)
@@ -87,13 +94,20 @@ func D00(count int) int {
 		// Roll a D10
 		b := roll.Roll(10)
 
-		if b == 1 && a == 0 {
-			return 100
+		// If contions for dice were 100 when rolling,
+		// append 100 to the results.
+		if a == 10 && b == 1 {
+			results = append(100)
+			continue
 		}
 
 		// Add the results together
 		result = a + b
-		count--
+		// Add latest roll to the array
+		results = append(result)
 	}
-	return result
+
+	fmt.Println(results)
+
+	return results
 }
