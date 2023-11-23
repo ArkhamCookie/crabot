@@ -72,6 +72,7 @@ func D20(count int) int {
 }
 
 // Can only roll one at a time for the moment
+// See branch d00 for the dev version
 func D00(count int) int {
 	for count > 0 {
 		// Roll a D10
