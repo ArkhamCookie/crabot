@@ -9,9 +9,11 @@ Whether you need a basic Discord bot in a *pinch* or want to spice up your serve
 ### Util
 
 - [formatting/markdown](/lib/formatting/markdown)
-  \- Formatting for [Discord's markdown syntax](https://www.markdownguide.org/tools/discord/).
+  — Formatting for [Discord's markdown syntax](https://www.markdownguide.org/tools/discord/).
 
 ### Fun
 
 - [crabtalk](/lib/crabtalk/)
-  \- Communicate in crab!
+  — Communicate in crab!
+- [dice](/lib/dice/)
+  <!-- — *description* -->

@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	crabot/crabtalk v0.0.0
-	formatting/markdown v0.0.0
+	crabot/formatting/markdown v0.0.0
 	internal/env v0.0.0
 )
 
@@ -20,7 +20,9 @@ require (
 
 replace (
 	crabot/crabtalk => ./lib/crabtalk
+	crabot/dice => ./lib/dice
+	crabot/dice/roll => ./lib/dice/roll
 	crabot/formatting => ./lib/formatting
-	formatting/markdown => ./lib/formatting/markdown
+	crabot/formatting/markdown => ./lib/formatting/markdown
 	internal/env => ./internal/env
 )
