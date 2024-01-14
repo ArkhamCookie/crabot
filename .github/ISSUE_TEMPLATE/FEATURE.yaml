@@ -46,6 +46,7 @@ body:
     label: I would be willing to help implement this feature. (Not required)
     options:
       - label: Yes
+      validations:
         required: false
 - type: textarea
   attributes:
