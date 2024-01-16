@@ -65,17 +65,17 @@
 ##### `lib/dice`
 
 - [ ] Dice Types
-  - [ ] D2
-  - [ ] D4
-  - [ ] D6
-  - [ ] D8
-  - [ ] D10
-  - [ ] D12
-  - [ ] D20
+  - [x] D2
+  - [x] D4
+  - [x] D6
+  - [x] D8
+  - [x] D10
+  - [x] D12
+  - [x] D20
   - [ ] D00
-- [ ] Coin
+- [x] Coin
   - [x] Flip
-  - [ ] Call
+  - [x] Call
 
 <!-- ### [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) -->
 
@@ -108,6 +108,6 @@
 - [x] Issue Config File
 - [x] Bug Report
 - [x] Feature Request
-- [ ] **FIX** Feature Request
+- [x] **FIX** Feature Request
 - [x] Support Question
 - [ ] **Better** Support Docs
