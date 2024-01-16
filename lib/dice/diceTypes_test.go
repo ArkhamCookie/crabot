@@ -22,7 +22,7 @@ func TestD2(t *testing.T) {
 	}
 
 	if result > 2 {
-		t.Fatal("dice.D2 was greater than 2")
+		t.Fatal("dice.D2 was greater than 2 when rolling 1 dice")
 	}
 
 	result = dice.D2(2)
@@ -33,7 +33,7 @@ func TestD2(t *testing.T) {
 		t.Fatal("dice.D2 was 0")
 	}
 
-	if result > 2 {
-		t.Fatal("dice.D2 was greater than 2")
+	if result < 2 {
+		t.Fatal("dice.D2 was less than 2 when rolling 2 dice")
 	}
 }
