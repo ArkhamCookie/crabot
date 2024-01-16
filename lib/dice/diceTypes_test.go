@@ -11,6 +11,7 @@ var (
 )
 
 func TestD2(t *testing.T) {
+	// Test rolling 1 D2
 	result = dice.D2(1)
 
 	// TODO: Test that it is a full number
@@ -25,6 +26,7 @@ func TestD2(t *testing.T) {
 		t.Fatal("dice.D2 was greater than 2 when rolling 1 dice")
 	}
 
+	// Test rolling 2 D2
 	result = dice.D2(2)
 
 	if result < 0 {
