@@ -39,3 +39,20 @@ func TestD2(t *testing.T) {
 		t.Fatal("dice.D2 was less than 2 when rolling 2 dice")
 	}
 }
+
+func TestD4(t *testing.T) {
+	// Test rolling 1 D4
+	result = dice.D4(1)
+	
+	if result < 0 {
+		t.Fatal("dice.D4 was negitive")
+	} else if result == 0 {
+		t.Fatal("dice.D4 was 0")
+	}
+	
+	if result < 4 {
+		t.Fatal("dice.D4 was greater than 4 when rolling 1 dice")
+	}
+	
+	
+}
