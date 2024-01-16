@@ -1,6 +1,8 @@
 # Todo
 
-<!-- ## Crabot General -->
+## Crabot General
+
+- [ ] Setup webhook for Discord changelogs (?)
 
 ## Libs
 
