@@ -13,6 +13,7 @@ var (
 func TestD2(t *testing.T) {
 	// Test rolling 1 D2
 	result = dice.D2(1)
+	t.Log("dice.D2(1) result was", result)
 
 	// TODO: Test that it is a full number
 
@@ -28,6 +29,7 @@ func TestD2(t *testing.T) {
 
 	// Test rolling 2 D2
 	result = dice.D2(2)
+	t.Log("dice.D2(2) result was", result)
 
 	if result < 0 {
 		t.Fatal("dice.D2 was negitive")
@@ -42,20 +44,21 @@ func TestD2(t *testing.T) {
 
 func TestD4(t *testing.T) {
 	// Test rolling 1 D4
-	result = dice.D4(1)
+	result = dice.D4(0)
+	t.Log("dice.D4(1) result was", result)
 
 	if result < 0 {
 		t.Fatal("dice.D4 was negitive")
 	} else if result == 0 {
 		t.Fatal("dice.D4 was 0")
 	}
-
-	if result < 4 {
+	if result > 4 {
 		t.Fatal("dice.D4 was greater than 4 when rolling 1 dice")
 	}
 
 	// Test rolling 2 D2
 	result = dice.D4(2)
+	t.Log("dice.D4(2) result was", result)
 
 	if result < 0 {
 		t.Fatal("dice.D4 was negitive")
