@@ -24,5 +24,6 @@ replace (
 	crabot/dice/roll => ./lib/dice/roll
 	crabot/formatting => ./lib/formatting
 	crabot/formatting/markdown => ./lib/formatting/markdown
+	crabot/formatting/timestamps => ./lib/formatting/timestamps
 	internal/env => ./internal/env
 )
