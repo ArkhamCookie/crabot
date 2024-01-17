@@ -18,6 +18,7 @@ Whether you need a basic Discord bot in a *pinch* or want to spice up your serve
   — Communicate in crab!
 <!--
   lib/dice is currently not working
+  See issue [#35](https://github.com/ArkhamCookie/crabot/issues/35)
  - [dice](/lib/dice/)
   — For all your dice rolling needs
 -->
