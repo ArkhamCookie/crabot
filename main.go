@@ -106,6 +106,7 @@ var (
 				},
 			})
 		},
+		// crabtalk command handler
 		"crabtalk": func(session *discordgo.Session, interaction *discordgo.InteractionCreate) {
 			// Access input
 			options := interaction.ApplicationCommandData().Options
