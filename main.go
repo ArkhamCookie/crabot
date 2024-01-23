@@ -9,6 +9,7 @@ import (
 
 	"crabot/crabtalk"
 	"crabot/formatting/markdown"
+	"crabot/formatting/timestamps"
 	"internal/env"
 
 	"github.com/bwmarrin/discordgo"
@@ -70,6 +71,24 @@ var (
 					Type:        discordgo.ApplicationCommandOptionString,
 					Name:        "text-to-translate",
 					Description: "Message to translate",
+					Required:    true,
+				},
+			},
+		},
+		{
+			Name:        "timestamp",
+			Description: "Generate timestamps",
+			Options: []*discordgo.ApplicationCommandOption{
+				{
+					Type:        discordgo.ApplicationCommandOptionString,
+					Name:        "time",
+					Description: "Time to generate a timestamp for",
+					Required:    true,
+				},
+				{
+					Type:        discordgo.ApplicationCommandOptionString,
+					Name:        "format",
+					Description: "Type of timestamp to generate",
 					Required:    true,
 				},
 			},
