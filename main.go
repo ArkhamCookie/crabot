@@ -9,7 +9,7 @@ import (
 
 	"crabot/crabtalk"
 	"crabot/formatting/markdown"
-	"crabot/formatting/timestamps"
+	// "crabot/formatting/timestamps"
 	"internal/env"
 
 	"github.com/bwmarrin/discordgo"
@@ -76,6 +76,7 @@ var (
 			},
 		},
 		{
+			// timestamp command
 			Name:        "timestamp",
 			Description: "Generate timestamps",
 			Options: []*discordgo.ApplicationCommandOption{
@@ -128,6 +129,45 @@ var (
 				msgformat += markdown.Blockquote(translatedText)
 				msgformat += "\n"
 			}
+
+			session.InteractionRespond(interaction.Interaction, &discordgo.InteractionResponse{
+				Type: discordgo.InteractionResponseChannelMessageWithSource,
+				Data: &discordgo.InteractionResponseData{
+					Content: msgformat,
+				},
+			})
+		},
+		// timestamp command handler
+		"timestamp": func(session *discordgo.Session, interaction *discordgo.InteractionCreate) {
+			// Access input
+			options := interaction.ApplicationCommandData().Options
+
+			// Convert slice (options) into map
+			optionMap := make(map[string]*discordgo.ApplicationCommandInteractionDataOption, len(options))
+			for _, opt := range options {
+				optionMap[opt.Name] = opt
+			}
+
+			margs := make([]interface{}, 0, len(options))
+			msgformat := ""
+
+			if option, ok := optionMap["format"]; ok {
+				formatArg := append(margs, option.StringValue())
+				formatString := fmt.Sprint(formatArg)
+
+				switch formatString {
+				case "[foo]":
+					msg := "Debuggging"
+					msgformat += msg
+				default:
+					msg := "Error: invaild timestamp format"
+					msgformat += msg
+				}
+
+			}
+
+			//
+			msgformat += "\n"
 
 			session.InteractionRespond(interaction.Interaction, &discordgo.InteractionResponse{
 				Type: discordgo.InteractionResponseChannelMessageWithSource,
