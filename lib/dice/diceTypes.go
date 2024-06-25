@@ -95,16 +95,16 @@ func D00(count int) []int {
 		b := roll.Roll(10)
 
 		// If contions for dice were 100 when rolling,
-		// append 100 to the results.
+		// add 100 to the results.
 		if a == 10 && b == 1 {
-			results = append(100)
+			results[count] = 100
 			continue
 		}
 
 		// Add the results together
 		result = a + b
 		// Add latest roll to the array
-		results = append(result)
+		results[count] = result
 	}
 
 	fmt.Println(results)
