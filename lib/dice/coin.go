@@ -33,7 +33,7 @@ func CoinCall(call string) (string, bool, error) {
 
 	// If called correct, then return true.
 	if side == call {
-		return side, false, nil
+		return side, true, nil
 	}
 
 	// If called wrong, then return false.

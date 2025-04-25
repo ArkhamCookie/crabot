@@ -1,6 +1,6 @@
 module github.com/ArkhamCookie/crabot
 
-go 1.21
+go 1.24.2
 
 require (
 	crabot/crabtalk v0.0.0
@@ -8,7 +8,9 @@ require (
 	internal/env v0.0.0
 )
 
-require github.com/bwmarrin/discordgo v0.27.1
+require (
+	github.com/bwmarrin/discordgo v0.27.1
+)
 
 require (
 	github.com/gSpera/morse v1.1.2 // indirect
