@@ -29,7 +29,9 @@ func TestD2(t *testing.T) {
 
 	if result < 0 {
 		t.Fatal("dice.D2(2) was negative")
-	} else if result == 0 {
+	}
+
+	if result == 0 {
 		t.Fatal("dice.D2(2) was 0")
 	}
 
@@ -57,7 +59,9 @@ func TestD4(t *testing.T) {
 
 	if result < 0 {
 		t.Fatal("dice.D4(2) was negative")
-	} else if result == 0 {
+	}
+
+	if result == 0 {
 		t.Fatal("dice.D4(2) was 0")
 	}
 
@@ -85,7 +89,9 @@ func TestD6(t *testing.T) {
 
 	if result < 0 {
 		t.Fatal("dice.D6(2) was negative")
-	} else if result == 0 {
+	}
+
+	if result == 0 {
 		t.Fatal("dice.D6(2) was 0")
 	}
 
@@ -113,7 +119,9 @@ func TestD8(t *testing.T) {
 
 	if result < 0 {
 		t.Fatal("dice.D8(2) was negative")
-	} else if result == 0 {
+	}
+
+	if result == 0 {
 		t.Fatal("dice.D8(2) was 0")
 	}
 
@@ -141,7 +149,9 @@ func TestD10(t *testing.T) {
 
 	if result < 0 {
 		t.Fatal("dice.D10(2) was negative")
-	} else if result == 0 {
+	}
+
+	if result == 0 {
 		t.Fatal("dice.D10(2) was 0")
 	}
 
@@ -169,7 +179,9 @@ func TestD12(t *testing.T) {
 
 	if result < 0 {
 		t.Fatal("dice.D12(2) was negative")
-	} else if result == 0 {
+	}
+
+	if result == 0 {
 		t.Fatal("dice.D12(2) was 0")
 	}
 
@@ -197,7 +209,9 @@ func TestD20(t *testing.T) {
 
 	if result < 0 {
 		t.Fatal("dice.D20(2) was negative")
-	} else if result == 0 {
+	}
+
+	if result == 0 {
 		t.Fatal("dice.D20(2) was 0")
 	}
 
