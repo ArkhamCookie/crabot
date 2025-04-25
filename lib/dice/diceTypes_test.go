@@ -6,12 +6,8 @@ import (
 	"crabot/dice"
 )
 
-var (
-	result int
-)
-
 func TestD2(t *testing.T) {
-	result = dice.D2(1)
+	result := dice.D2(1)
 
 	if result < 0 {
 		t.Fatal("dice.D2(1) was negative")
@@ -41,7 +37,7 @@ func TestD2(t *testing.T) {
 }
 
 func TestD4(t *testing.T) {
-	result = dice.D4(1)
+	result := dice.D4(1)
 
 	if result < 0 {
 		t.Fatal("dice.D4(1) was negative")
@@ -71,7 +67,7 @@ func TestD4(t *testing.T) {
 }
 
 func TestD6(t *testing.T) {
-	result = dice.D6(1)
+	result := dice.D6(1)
 
 	if result < 0 {
 		t.Fatal("dice.D6(1) was negative")
@@ -101,7 +97,7 @@ func TestD6(t *testing.T) {
 }
 
 func TestD8(t *testing.T) {
-	result = dice.D8(1)
+	result := dice.D8(1)
 
 	if result < 0 {
 		t.Fatal("dice.D8(1) was negative")
@@ -131,7 +127,7 @@ func TestD8(t *testing.T) {
 }
 
 func TestD10(t *testing.T) {
-	result = dice.D10(1)
+	result := dice.D10(1)
 
 	if result < 0 {
 		t.Fatal("dice.D10(1) was negative")
@@ -161,7 +157,7 @@ func TestD10(t *testing.T) {
 }
 
 func TestD12(t *testing.T) {
-	result = dice.D12(1)
+	result := dice.D12(1)
 
 	if result < 0 {
 		t.Fatal("dice.D12(1) was negative")
@@ -191,7 +187,7 @@ func TestD12(t *testing.T) {
 }
 
 func TestD20(t *testing.T) {
-	result = dice.D20(1)
+	result := dice.D20(1)
 
 	if result < 0 {
 		t.Fatal("dice.D20(1) was negative")
