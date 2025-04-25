@@ -1,8 +1,6 @@
 package dice
 
 import (
-	"fmt"
-
 	"crabot/dice/roll"
 )
 
@@ -77,10 +75,11 @@ func D20(count int) int {
 func D00(count int) []int {
 	// Create the results array
 	results := make([]int, count)
-	fmt.Println(results)
 
+	// Set count to the correct count for arraying
+	count--
 	// Get *count* number of results
-	for count > 0 {
+	for count >= 0 {
 		// Roll a D10
 		a := roll.Roll(10)
 
@@ -105,9 +104,10 @@ func D00(count int) []int {
 		result = a + b
 		// Add latest roll to the array
 		results[count] = result
-	}
 
-	fmt.Println(results)
+		// Mark count as done
+		count--
+	}
 
 	return results
 }
