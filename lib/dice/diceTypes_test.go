@@ -15,7 +15,9 @@ func TestD2(t *testing.T) {
 
 	if result < 0 {
 		t.Fatal("dice.D2(1) was negative")
-	} else if result == 0 {
+	}
+
+	if result == 0 {
 		t.Fatal("dice.D2(1) was 0")
 	}
 
