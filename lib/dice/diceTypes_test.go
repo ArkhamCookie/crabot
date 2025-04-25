@@ -38,6 +38,34 @@ func TestD2(t *testing.T) {
 	}
 }
 
+func TestD4(t *testing.T) {
+	result = dice.D4(1)
+
+	if result < 0 {
+		t.Fatal("dice.D4(1) was negative")
+	}
+
+	if result == 0 {
+		t.Fatal("dice.D4(1) was 0")
+	}
+
+	if result > 2 {
+		t.Fatal("dice.D4(1) was greater than 2")
+	}
+
+	result = dice.D4(2)
+
+	if result < 0 {
+		t.Fatal("dice.D4(2) was negative")
+	} else if result == 0 {
+		t.Fatal("dice.D4(2) was 0")
+	}
+
+	if result < 2 {
+		t.Fatal("dice.D4(2) was less than 2")
+	}
+}
+
 func TestD00(t *testing.T) {
 	percentileResults := dice.D00(1)
 
