@@ -42,6 +42,17 @@ func TestD00(t *testing.T) {
 	for i := range percentileResults {
 		if percentileResults[i] < 0 {
 			t.Fatal("dice.D00(1) was negative")
+		} else if percentileResults[i] > 100 {
+			t.Fatal("dice.D00(1) was over 100")
+		}
+	}
+
+	percentileResults = dice.D00(2)
+	for i := range percentileResults {
+		if percentileResults[i] < 0 {
+			t.Fatal("dice.D00(2) was negative")
+		} else if percentileResults[i] > 100 {
+			t.Fatal("dice.D00(2) was over 100")
 		}
 	}
 }
