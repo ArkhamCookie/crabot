@@ -71,10 +71,15 @@ func D20(count int) int {
 	return result
 }
 
-// Can only roll one at a time for the moment
-// See branch d00 for the dev version
-func D00(count int) int {
-	for count > 0 {
+// D00 rolls a D00 (percentile dice)
+func D00(count int) []int {
+	// Create the results array
+	results := make([]int, count)
+
+	// Set count to the correct count for arraying
+	count--
+	// Get *count* number of results
+	for count >= 0 {
 		// Roll a D10
 		a := roll.Roll(10)
 
@@ -88,13 +93,21 @@ func D00(count int) int {
 		// Roll a D10
 		b := roll.Roll(10)
 
-		if b == 1 && a == 0 {
-			return 100
+		// If contions for dice were 100 when rolling,
+		// add 100 to the results.
+		if a == 10 && b == 1 {
+			results[count] = 100
+			continue
 		}
 
 		// Add the results together
 		result = a + b
+		// Add latest roll to the array
+		results[count] = result
+
+		// Mark count as done
 		count--
 	}
-	return result
+
+	return results
 }
