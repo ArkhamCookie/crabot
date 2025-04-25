@@ -6,7 +6,9 @@ import (
 	"crabot/dice"
 )
 
-var result int
+var (
+	result int
+)
 
 func TestD2(t *testing.T) {
 	result = dice.D2(1)
