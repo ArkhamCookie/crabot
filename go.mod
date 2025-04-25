@@ -1,6 +1,6 @@
 module github.com/ArkhamCookie/crabot
 
-go 1.20
+go 1.21
 
 require (
 	crabot/crabtalk v0.0.0
@@ -14,8 +14,8 @@ require (
 	github.com/gSpera/morse v1.1.2 // indirect
 	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
-	golang.org/x/crypto v0.1.0 // indirect
-	golang.org/x/sys v0.1.0 // indirect
+	golang.org/x/crypto v0.31.0 // indirect
+	golang.org/x/sys v0.28.0 // indirect
 )
 
 replace (
