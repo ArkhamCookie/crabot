@@ -8,7 +8,9 @@ require (
 	internal/env v0.0.0
 )
 
-require github.com/bwmarrin/discordgo v0.27.1
+require (
+	github.com/bwmarrin/discordgo v0.27.1
+)
 
 require (
 	github.com/gSpera/morse v1.1.2 // indirect
