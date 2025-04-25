@@ -14,7 +14,7 @@ func TestD2(t *testing.T) {
 	// TODO: Test that it is a full number
 
 	if result < 0 {
-		t.Fatal("dice.D2(1) was negitive")
+		t.Fatal("dice.D2(1) was negative")
 	} else if result == 0 {
 		t.Fatal("dice.D2(1) was 0")
 	}
@@ -26,7 +26,7 @@ func TestD2(t *testing.T) {
 	result = dice.D2(2)
 
 	if result < 0 {
-		t.Fatal("dice.D2(2) was negitive")
+		t.Fatal("dice.D2(2) was negative")
 	} else if result == 0 {
 		t.Fatal("dice.D2(2) was 0")
 	}
@@ -41,7 +41,7 @@ func TestD00(t *testing.T) {
 
 	for i := range percentileResults {
 		if percentileResults[i] < 0 {
-			t.Fatal("dice.D00(1) was negitive")
+			t.Fatal("dice.D00(1) was negative")
 		}
 	}
 }
