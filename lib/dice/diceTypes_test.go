@@ -13,8 +13,6 @@ var (
 func TestD2(t *testing.T) {
 	result = dice.D2(1)
 
-	// TODO: Test that it is a full number
-
 	if result < 0 {
 		t.Fatal("dice.D2(1) was negative")
 	} else if result == 0 {
