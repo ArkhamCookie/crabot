@@ -1,16 +1,12 @@
 package dice_test
 
 import (
-	"fmt"
 	"testing"
 
 	"crabot/dice"
 )
 
-var (
-	result int
-	resultCount string
-)
+var result int
 
 func TestD2(t *testing.T) {
 	result = dice.D2(1)
@@ -18,34 +14,34 @@ func TestD2(t *testing.T) {
 	// TODO: Test that it is a full number
 
 	if result < 0 {
-		t.Fatal("dice.D2 was negitive")
+		t.Fatal("dice.D2(1) was negitive")
 	} else if result == 0 {
-		t.Fatal("dice.D2 was 0")
+		t.Fatal("dice.D2(1) was 0")
 	}
 
 	if result > 2 {
-		t.Fatal("dice.D2 was greater than 2")
+		t.Fatal("dice.D2(1) was greater than 2")
 	}
 
 	result = dice.D2(2)
 
 	if result < 0 {
-		t.Fatal("dice.D2 was negitive")
+		t.Fatal("dice.D2(2) was negitive")
 	} else if result == 0 {
-		t.Fatal("dice.D2 was 0")
+		t.Fatal("dice.D2(2) was 0")
 	}
 
-	if result > 2 {
-		t.Fatal("dice.D2 was greater than 2")
+	if result < 2 {
+		t.Fatal("dice.D2(2) was less than 2")
 	}
 }
 
 func TestD00(t *testing.T) {
-	results := dice.D00(resultCount)
+	percentileResults := dice.D00(1)
 
-	if results < 0 {
-		t.Fatal("dice.D00 was negitive")
+	for i := range percentileResults {
+		if percentileResults[i] < 0 {
+			t.Fatal("dice.D00(1) was negitive")
+		}
 	}
-
-	fmt.Println("results:", results)
 }
