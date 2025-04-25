@@ -1,6 +1,6 @@
 module github.com/ArkhamCookie/crabot
 
-go 1.21
+go 1.24.2
 
 require (
 	crabot/crabtalk v0.0.0
