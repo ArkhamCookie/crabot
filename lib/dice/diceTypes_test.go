@@ -51,8 +51,8 @@ func TestD4(t *testing.T) {
 		t.Fatal("dice.D4(1) was 0")
 	}
 
-	if result > 2 {
-		t.Fatal("dice.D4(1) was greater than 2")
+	if result > 4 {
+		t.Fatal("dice.D4(1) was greater than 4")
 	}
 
 	result = dice.D4(2)
@@ -81,8 +81,8 @@ func TestD6(t *testing.T) {
 		t.Fatal("dice.D6(1) was 0")
 	}
 
-	if result > 2 {
-		t.Fatal("dice.D6(1) was greater than 2")
+	if result > 6 {
+		t.Fatal("dice.D6(1) was greater than 6")
 	}
 
 	result = dice.D6(2)
@@ -111,8 +111,8 @@ func TestD8(t *testing.T) {
 		t.Fatal("dice.D8(1) was 0")
 	}
 
-	if result > 2 {
-		t.Fatal("dice.D8(1) was greater than 2")
+	if result > 8 {
+		t.Fatal("dice.D8(1) was greater than 8")
 	}
 
 	result = dice.D8(2)
@@ -141,8 +141,8 @@ func TestD10(t *testing.T) {
 		t.Fatal("dice.D10(1) was 0")
 	}
 
-	if result > 2 {
-		t.Fatal("dice.D10(1) was greater than 2")
+	if result > 10 {
+		t.Fatal("dice.D10(1) was greater than 10")
 	}
 
 	result = dice.D10(2)
@@ -171,8 +171,8 @@ func TestD12(t *testing.T) {
 		t.Fatal("dice.D12(1) was 0")
 	}
 
-	if result > 2 {
-		t.Fatal("dice.D12(1) was greater than 2")
+	if result > 12 {
+		t.Fatal("dice.D12(1) was greater than 12")
 	}
 
 	result = dice.D12(2)
@@ -201,8 +201,8 @@ func TestD20(t *testing.T) {
 		t.Fatal("dice.D20(1) was 0")
 	}
 
-	if result > 2 {
-		t.Fatal("dice.D20(1) was greater than 2")
+	if result > 20 {
+		t.Fatal("dice.D20(1) was greater than 20")
 	}
 
 	result = dice.D20(2)
