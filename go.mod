@@ -5,19 +5,22 @@ go 1.24.2
 require (
 	crabot/crabtalk v0.0.0
 	crabot/formatting/markdown v0.0.0
+	internal/dicecmd v0.0.0
 	internal/env v0.0.0
 )
 
 require (
-	github.com/bwmarrin/discordgo v0.27.1
+	github.com/bwmarrin/discordgo v0.28.1
 )
 
 require (
+	crabot/dice v0.0.0 // indirect
+	crabot/dice/roll v0.0.0 // indirect
 	github.com/gSpera/morse v1.1.2 // indirect
-	github.com/gorilla/websocket v1.4.2 // indirect
+	github.com/gorilla/websocket v1.5.3 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
-	golang.org/x/crypto v0.31.0 // indirect
-	golang.org/x/sys v0.28.0 // indirect
+	golang.org/x/crypto v0.37.0 // indirect
+	golang.org/x/sys v0.32.0 // indirect
 )
 
 replace (
