@@ -194,12 +194,13 @@ func main() {
 		log.Fatalln("Can't open the session:", err)
 	}
 
-	// Create commands
+	// Create commands var
 	log.Println("Adding commands...")
 	registeredCommands := make([]*discordgo.ApplicationCommand, len(commands))
 
+	// Check if we want to add commands
 	if *AddCommands {
-		// Loop for adding each interaction
+		// Loop for adding each interaction/command
 		for i, v := range commands {
 			cmd, err := session.ApplicationCommandCreate(session.State.User.ID, *GuildID, v)
 			if err != nil {
