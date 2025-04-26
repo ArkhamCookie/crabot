@@ -18,10 +18,11 @@ import (
 
 // Bot parameters
 var (
-	GuildID        = flag.String("guild", "", "Test guild ID. If not passed - bot registers commands globally")
-	BotToken       = flag.String("token", "", "Bot access token")
-	RemoveCommands = flag.Bool("rmcmd", false, "Remove all commands after shutdowning or not")
+	BotToken = flag.String("token", "", "Bot access token")
+	GuildID  = flag.String("guild", "", "Test guild ID. If not passed - bot registers commands globally")
+
 	AddCommands    = flag.Bool("addcmd", false, "Add all commands on start up (only run on first startup)")
+	RemoveCommands = flag.Bool("rmcmd", false, "Remove all commands after shutdowning or not")
 )
 
 // Session
