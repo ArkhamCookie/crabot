@@ -20,7 +20,7 @@ Information on how you can help contribute to this project.
 
 ### Setup Your Golang Environment
 
-1. Confirm you have Go 1.20 [installed](https://go.dev/doc/install)
+1. Confirm you have Go 1.24.2 or higher [installed](https://go.dev/doc/install)
 
   ```shell
   go version
