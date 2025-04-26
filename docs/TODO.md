@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD024 -->
 # Todo
 
 ## Crabot General
@@ -8,7 +9,7 @@
 
 ### `lib/dice`
 
-- [ ] Dice Types
+- [x] Dice Types
   - [x] D2
   - [x] D4
   - [x] D6
@@ -16,7 +17,7 @@
   - [x] D10
   - [x] D12
   - [x] D20
-  - [ ] D00
+  - [x] D00
 - [x] Coin
   - [x] Flip
   - [x] Call
@@ -29,11 +30,11 @@
 
 ### `lib/formatting`
 
-- [ ] README.md
+- [x] README.md
 
 ### `lib/dice`
 
-- [ ] README.md
+- [x] README.md
 
 ## Examples
 
@@ -66,7 +67,7 @@
 
 ##### `lib/dice`
 
-- [ ] Dice Types
+- [x] Dice Types
   - [x] D2
   - [x] D4
   - [x] D6
@@ -74,10 +75,10 @@
   - [x] D10
   - [x] D12
   - [x] D20
-  - [ ] D00
+  - [x] D00
 - [x] Coin
   - [x] Flip
-  - [x] Call
+  - [ ] Call
 
 <!-- ### [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) -->
 
