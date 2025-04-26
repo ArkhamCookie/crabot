@@ -18,10 +18,11 @@ import (
 
 // Bot parameters
 var (
-	GuildID        = flag.String("guild", "", "Test guild ID. If not passed - bot registers commands globally")
-	BotToken       = flag.String("token", "", "Bot access token")
-	RemoveCommands = flag.Bool("rmcmd", false, "Remove all commands after shutdowning or not")
+	BotToken = flag.String("token", "", "Bot access token")
+	GuildID  = flag.String("guild", "", "Test guild ID. If not passed - bot registers commands globally")
+
 	AddCommands    = flag.Bool("addcmd", false, "Add all commands on start up (only run on first startup)")
+	RemoveCommands = flag.Bool("rmcmd", false, "Remove all commands after shutdowning or not")
 )
 
 // Session
@@ -193,12 +194,13 @@ func main() {
 		log.Fatalln("Can't open the session:", err)
 	}
 
-	// Create commands
+	// Create commands var
 	log.Println("Adding commands...")
 	registeredCommands := make([]*discordgo.ApplicationCommand, len(commands))
 
+	// Check if we want to add commands
 	if *AddCommands {
-		// Loop for adding each interaction
+		// Loop for adding each interaction/command
 		for i, v := range commands {
 			cmd, err := session.ApplicationCommandCreate(session.State.User.ID, *GuildID, v)
 			if err != nil {
