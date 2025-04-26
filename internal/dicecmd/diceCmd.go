@@ -1,8 +1,9 @@
 package dicecmd
 
 import (
-	"crabot/dice"
 	"fmt"
+
+	"crabot/dice"
 )
 
 func DetermineDiceRoll(diceType string, diceAmount int) int {
