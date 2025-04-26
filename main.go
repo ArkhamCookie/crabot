@@ -216,13 +216,13 @@ func main() {
 	// Check if we want to remove commands
 	if *RemoveCommands {
 		log.Println("Removing commands...")
-	}
 
-	// Loop to delete commands
-	for _, v := range registeredCommands {
-		err := session.ApplicationCommandDelete(session.State.User.ID, *GuildID, v.ID)
-		if err != nil {
-			log.Panicf("Can't delete '%v' command: %v\n", v.Name, err)
+		// Loop to delete commands
+		for _, v := range registeredCommands {
+			err := session.ApplicationCommandDelete(session.State.User.ID, *GuildID, v.ID)
+			if err != nil {
+				log.Panicf("Can't delete '%v' command: %v\n", v.Name, err)
+			}
 		}
 	}
 
