@@ -6,9 +6,11 @@ import (
 	"log"
 	"os"
 	"os/signal"
+	"strings"
 
 	"crabot/crabtalk"
 	"crabot/formatting/markdown"
+	"internal/dicecmd"
 	"internal/env"
 
 	"github.com/bwmarrin/discordgo"
@@ -74,6 +76,25 @@ var (
 				},
 			},
 		},
+		{
+			// Dice rolling command
+			Name:        "dice",
+			Description: "Roll a given number of dice types",
+			Options: []*discordgo.ApplicationCommandOption{
+				{
+					Type:        discordgo.ApplicationCommandOptionString,
+					Name:        "type",
+					Description: "Type of dice to roll",
+					Required:    false,
+				},
+				{
+					Type:        discordgo.ApplicationCommandOptionInteger,
+					Name:        "amount",
+					Description: "Amount of dice to roll",
+					Required:    false,
+				},
+			},
+		},
 	}
 
 	// Handles what to do when a command is ran
@@ -113,6 +134,36 @@ var (
 				Type: discordgo.InteractionResponseChannelMessageWithSource,
 				Data: &discordgo.InteractionResponseData{
 					Content: msgformat,
+				},
+			})
+		},
+		"dice": func(session *discordgo.Session, interaction *discordgo.InteractionCreate) {
+			options := interaction.ApplicationCommandData().Options
+
+			optionMap := make(map[string]*discordgo.ApplicationCommandInteractionDataOption, len(options))
+			for _, opt := range options {
+				optionMap[opt.Name] = opt
+			}
+
+			diceType := "D6"
+			diceAmount := 1
+
+			if option, ok := optionMap["type"]; ok {
+				diceType = strings.ToUpper(option.StringValue())
+			}
+
+			if option, ok := optionMap["amount"]; ok {
+				diceAmount = int(option.IntValue())
+			}
+
+			result := dicecmd.DetermineDiceRoll(diceType, diceAmount)
+
+			message := fmt.Sprintf("Rolled %d %s\nResults: %d\n", diceAmount, diceType, result)
+
+			session.InteractionRespond(interaction.Interaction, &discordgo.InteractionResponse{
+				Type: discordgo.InteractionResponseChannelMessageWithSource,
+				Data: &discordgo.InteractionResponseData{
+					Content: message,
 				},
 			})
 		},
