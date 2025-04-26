@@ -1,4 +1,4 @@
-# crabtalk
+# crabot/crabtalk
 
 Translate English [^1] to crab.
 

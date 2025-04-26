@@ -11,6 +11,5 @@ I still need to write this...
 
 ## Contact Me
 
-You can always contact me on Discord @ArkhamCookie,
-by joining the server I help run, and made this bot for, [The Neurodiverse Nook](https://discord.com/invite/gA4qs6Ybxp),
+You can always contact me on Discord @ArkhamCookie
 or by email me at [github@mail.theuntitledproject.dev](mailto:github@mail.theuntitledproject.dev).
