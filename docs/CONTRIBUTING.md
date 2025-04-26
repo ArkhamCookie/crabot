@@ -66,7 +66,7 @@ Last, *but certainly not least,* you can support the project financially by dona
 
 You can really help me by sending a donation my way.
 I love open source and creating projects to share with the world,
-and I hope to make it my full time job eventually.<https://github.com/DavidAnson/markdownlint/tree/v0.29.0>
+and I hope to make it my full time job eventually.
 
 Even a "small" amount, like one dollar, goes a long way;
 both to feed my cookie addiction and help motivate me.
