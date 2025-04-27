@@ -1,7 +1,7 @@
 package dicecmd
 
 import (
-	"fmt"
+	"log"
 
 	"crabot/dice"
 )
@@ -16,7 +16,7 @@ func DetermineDiceRoll(diceType string, diceAmount int) int {
 		fallthrough
 	case "D100":
 		if diceAmount > 1 {
-			fmt.Println("WARNING: Only 1 dice is supported for D00/D100")
+			log.Println("WARNING: Only 1 dice is supported for D00/D100")
 		}
 
 		results := dice.D00(1)
@@ -51,7 +51,7 @@ func DetermineDiceRoll(diceType string, diceAmount int) int {
 	case "D20":
 		return dice.D20(diceAmount)
 	default:
-		fmt.Println("WARNING: Unsupported dice type: %s", diceType)
+		log.Println("WARNING: Unsupported dice type: %s", diceType)
 
 		return dice.D6(diceAmount)
 	}
