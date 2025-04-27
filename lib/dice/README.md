@@ -20,7 +20,7 @@ func main() {
   result := dice.D20(1)
 
   // Print result
-  fmt.Printf("Rolled a: %d", result)
+  fmt.Println("Rolled a: %d", result)
 }
 ```
 
@@ -40,6 +40,6 @@ func main() {
   result := dice.D20(5)
 
   // Print result
-  fmt.Printf("Rolled a: %d", result)
+  fmt.Println("Rolled a: %d", result)
 }
 ```
