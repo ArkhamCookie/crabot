@@ -5,6 +5,7 @@ go 1.24.2
 require (
 	crabot/crabtalk v0.0.0
 	crabot/formatting/markdown v0.0.0
+	crabot/dice v0.0.0
 	internal/dicecmd v0.0.0
 	internal/env v0.0.0
 )
@@ -14,7 +15,6 @@ require (
 )
 
 require (
-	crabot/dice v0.0.0 // indirect
 	crabot/dice/roll v0.0.0 // indirect
 	github.com/gSpera/morse v1.1.2 // indirect
 	github.com/gorilla/websocket v1.5.3 // indirect

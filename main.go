@@ -9,6 +9,7 @@ import (
 	"strings"
 
 	"crabot/crabtalk"
+	"crabot/dice"
 	"crabot/formatting/markdown"
 	"internal/dicecmd"
 	"internal/env"
@@ -97,6 +98,19 @@ var (
 				},
 			},
 		},
+		{
+			// Coin flipping command
+			Name:        "coinflip",
+			Description: "Flip a coin and optionally call it in the air",
+			Options: []*discordgo.ApplicationCommandOption{
+				{
+					Type:        discordgo.ApplicationCommandOptionString,
+					Name:        "call",
+					Description: "Call the coin in the air",
+					Required:    false,
+				},
+			},
+		},
 	}
 
 	// Handles what to do when a command is ran
@@ -107,6 +121,48 @@ var (
 				Type: discordgo.InteractionResponseChannelMessageWithSource,
 				Data: &discordgo.InteractionResponseData{
 					Content: "This is a basic test command.",
+				},
+			})
+		},
+		"coin": func(session *discordgo.Session, interaction *discordgo.InteractionCreate) {
+			options := interaction.ApplicationCommandData().Options
+
+			optionMap := make(map[string]*discordgo.ApplicationCommandInteractionDataOption, len(options))
+			for _, opt := range options {
+				optionMap[opt.Name] = opt
+			}
+
+			message := "Result: "
+
+			if option, ok := optionMap["call"]; ok {
+				option := strings.ToLower(option.StringValue())
+
+				if option != "heads" && option != "tails" {
+					log.Panicln("[WARNING]: Unsupported coin side (use 'heads' or 'tails')")
+				}
+
+				result, called, err := dice.CoinCall(option)
+
+				if err != nil {
+					log.Printf("[ERROR]: CoinCall(%s) failed\nError: %!(error)\n", option, err)
+				}
+
+				message += result
+				if called {
+					message += "\n Coin was called correctly."
+				} else {
+					message += "\n Coin was not called correctly."
+				}
+			} else {
+				result, _ := dice.CoinFlip()
+
+				message += result
+			}
+
+			session.InteractionRespond(interaction.Interaction, &discordgo.InteractionResponse{
+				Type: discordgo.InteractionResponseChannelMessageWithSource,
+				Data: &discordgo.InteractionResponseData{
+					Content: message,
 				},
 			})
 		},
