@@ -24,6 +24,8 @@
 
 ## Documentation
 
+- [ ] **Better** Support Docs
+
 ### `lib/crabtalk`
 
 - [x] README.md
@@ -41,6 +43,7 @@
 - [ ] crabtalk
 - [ ] formatting
 - [ ] dice
+- [ ] roll
 
 ## Continuous Integration
 
@@ -79,6 +82,7 @@
 - [x] Coin
   - [x] Flip
   - [ ] Call
+- [ ] Roll
 
 <!-- ### [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) -->
 
@@ -113,4 +117,3 @@
 - [x] Feature Request
 - [x] **FIX** Feature Request
 - [x] Support Question
-- [ ] **Better** Support Docs
