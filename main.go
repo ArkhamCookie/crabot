@@ -194,11 +194,12 @@ func main() {
 		log.Fatalln("Can't open the session:", err)
 	}
 
+	// Create commands var
+	registeredCommands := make([]*discordgo.ApplicationCommand, len(commands))
+
 	// Check if we want to add commands
 	if *AddCommands {
-		// Create commands var
 		log.Println("Adding commands...")
-		registeredCommands := make([]*discordgo.ApplicationCommand, len(commands))
 
 		// Loop for adding each interaction/command
 		for i, v := range commands {
