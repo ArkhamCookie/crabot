@@ -124,7 +124,7 @@ var (
 				},
 			})
 		},
-		"coin": func(session *discordgo.Session, interaction *discordgo.InteractionCreate) {
+		"coinflip": func(session *discordgo.Session, interaction *discordgo.InteractionCreate) {
 			options := interaction.ApplicationCommandData().Options
 
 			optionMap := make(map[string]*discordgo.ApplicationCommandInteractionDataOption, len(options))
