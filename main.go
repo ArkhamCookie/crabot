@@ -17,7 +17,7 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
-// Bot parameters
+// Bot flags
 var (
 	BotToken = flag.String("token", "", "Bot access token")
 	GuildID  = flag.String("guild", "", "Test guild ID. If not passed - bot registers commands globally")
