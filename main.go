@@ -17,7 +17,7 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
-// Bot parameters
+// Bot flags
 var (
 	BotToken = flag.String("token", "", "Bot access token")
 	GuildID  = flag.String("guild", "", "Test guild ID. If not passed - bot registers commands globally")
@@ -29,11 +29,8 @@ var (
 // Session
 var session *discordgo.Session
 
-// Parse flags
-func init() { flag.Parse() }
-
 // Start session
-func init() {
+func getCredentials() {
 	var err error
 
 	// Check if token is entered.
@@ -228,17 +225,21 @@ var (
 	}
 )
 
-// Add handlers
-func init() {
+func main() {
+	// Parse flags
+	flag.Parse()
+
+	// Get credentials
+	getCredentials()
+
+	// Add handlers
 	session.AddHandler(func(session *discordgo.Session, interaction *discordgo.InteractionCreate) {
 		// Confirm handlers are added correctly
 		if h, ok := commandHandlers[interaction.ApplicationCommandData().Name]; ok {
 			h(session, interaction)
 		}
 	})
-}
 
-func main() {
 	// Logged in notification
 	session.AddHandler(func(session *discordgo.Session, ready *discordgo.Ready) {
 		log.Printf("Logged in as: %v#%v\n", session.State.User.Username, session.State.User.Discriminator)
