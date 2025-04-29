@@ -21,7 +21,14 @@ jobs:
       with:
         go-version-file: 'go.mod'
 
-    - run: go version
+    - name: Version
+      run: go version
+
+    - name: Run go vet
+      run: go vet ./...
+
+    - name: Run go fmt
+      run: go fmt ./...
 
     - name: Build
       run: go build -v ./...
