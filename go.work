@@ -7,6 +7,7 @@ use (
 	./lib/dice/roll
 	./lib/formatting
 	./lib/formatting/markdown
+	./lib/timestamp
 
 	./internal/env
 )
