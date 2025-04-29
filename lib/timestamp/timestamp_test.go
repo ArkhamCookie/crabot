@@ -21,10 +21,10 @@ func TestShortDate(t *testing.T) {
 
 	want := regexp.MustCompile("<t:" + now + ":d>")
 
-	output := timestamp.ShortDate()
+	output := timestamp.CurrentShortDate()
 
 	if !want.MatchString(output) {
-		t.Fatalf("`timestamp.ShortDate()` = %q want match for %#q\n", output, want)
+		t.Fatalf("`timestamp.CurrentShortDate()` = %q want match for %#q\n", output, want)
 	}
 }
 
@@ -33,10 +33,10 @@ func TestLongDate(t *testing.T) {
 
 	want := regexp.MustCompile("<t:" + now + ":D>")
 
-	output := timestamp.LongDate()
+	output := timestamp.CurrentLongDate()
 
 	if !want.MatchString(output) {
-		t.Fatalf("`timestamp.LongDate()` = %q want match for %#q\n", output, want)
+		t.Fatalf("`timestamp.CurrentLongDate()` = %q want match for %#q\n", output, want)
 	}
 }
 
@@ -45,10 +45,10 @@ func TestShortTime(t *testing.T) {
 
 	want := regexp.MustCompile("<t:" + now + ":t>")
 
-	output := timestamp.ShortTime()
+	output := timestamp.CurrentShortTime()
 
 	if !want.MatchString(output) {
-		t.Fatalf("`timestamp.ShortTime()` = %q want match for %#q\n", output, want)
+		t.Fatalf("`timestamp.CurrentShortTime()` = %q want match for %#q\n", output, want)
 	}
 }
 
@@ -57,10 +57,10 @@ func TestLongTime(t *testing.T) {
 
 	want := regexp.MustCompile("<t:" + now + ":T>")
 
-	output := timestamp.LongTime()
+	output := timestamp.CurrentLongTime()
 
 	if !want.MatchString(output) {
-		t.Fatalf("`timestamp.LongTime()` = %q want match for %#q\n", output, want)
+		t.Fatalf("`timestamp.CurrentLongTime()` = %q want match for %#q\n", output, want)
 	}
 }
 
@@ -69,10 +69,10 @@ func TestShortFull(t *testing.T) {
 
 	want := regexp.MustCompile("<t:" + now + ":f>")
 
-	output := timestamp.ShortFull()
+	output := timestamp.CurrentShortFull()
 
 	if !want.MatchString(output) {
-		t.Fatalf("`timestamp.ShortFull()` = %q want match for %#q\n", output, want)
+		t.Fatalf("`timestamp.CurrentShortFull()` = %q want match for %#q\n", output, want)
 	}
 }
 
@@ -81,10 +81,10 @@ func TestLongFull(t *testing.T) {
 
 	want := regexp.MustCompile("<t:" + now + ":F>")
 
-	output := timestamp.LongFull()
+	output := timestamp.CurrentLongFull()
 
 	if !want.MatchString(output) {
-		t.Fatalf("`timestamp.LongFull()` = %q want match for %#q\n", output, want)
+		t.Fatalf("`timestamp.CurrentLongFull()` = %q want match for %#q\n", output, want)
 	}
 }
 
@@ -93,9 +93,9 @@ func TestRelativeTime(t *testing.T) {
 
 	want := regexp.MustCompile("<t:" + now + ":R>")
 
-	output := timestamp.RelativeTime()
+	output := timestamp.CurrentRelativeTime()
 
 	if !want.MatchString(output) {
-		t.Fatalf("`timestamp.RelativeTime()` = %q want match for %#q\n", output, want)
+		t.Fatalf("`timestamp.CurrentRelativeTime()` = %q want match for %#q\n", output, want)
 	}
 }

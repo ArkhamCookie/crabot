@@ -13,49 +13,49 @@ func currentTime() string {
 	return convertedTime
 }
 
-func ShortDate() string {
+func CurrentShortDate() string {
 	now := currentTime()
 
 	return fmt.Sprintf("<t:%v:d>", now)
 }
 
-func LongDate() string {
+func CurrentLongDate() string {
 	now := currentTime()
 
 	return fmt.Sprintf("<t:%v:D>", now)
 }
 
-func ShortTime() string {
+func CurrentShortTime() string {
 	now := currentTime()
 
 	return fmt.Sprintf("<t:%v:t>", now)
 }
 
-func LongTime() string {
+func CurrentLongTime() string {
 	now := currentTime()
 
 	return fmt.Sprintf("<t:%v:T>", now)
 }
 
-func ShortFull() string {
+func CurrentShortFull() string {
 	now := currentTime()
 
 	return fmt.Sprintf("<t:%v:f>", now)
 }
 
-func LongFull() string {
+func CurrentLongFull() string {
 	now := currentTime()
 
 	return fmt.Sprintf("<t:%v:F>", now)
 }
 
-func RelativeTime() string {
+func CurrentRelativeTime() string {
 	currentTime := time.Now().Unix()
 	convertedTime := strconv.FormatInt(currentTime, 10)
 
 	return fmt.Sprintf("<t:%v:R>", convertedTime)
 }
 
-func UnixTimestamp() string {
+func CurrentUnixTimestamp() string {
 	return currentTime()
 }
