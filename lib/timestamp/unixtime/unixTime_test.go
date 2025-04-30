@@ -1,4 +1,4 @@
-package timestamp_test
+package unixtime_test
 
 import (
 	"testing"
