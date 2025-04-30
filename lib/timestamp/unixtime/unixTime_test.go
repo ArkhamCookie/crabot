@@ -3,11 +3,11 @@ package unixtime_test
 import (
 	"testing"
 
-	"crabot/timestamp"
+	"crabot/unixtime"
 )
 
 func TestUnixTimeBasic(t *testing.T) {
-	output, err := timestamp.UnixTime(2025, 12, 12, 12, 12, 00, "utc")
+	output, err := unixtime.UnixTime(2025, 12, 12, 12, 12, 00, "utc")
 
 	if err != nil {
 		t.Fatal("error thrown:", err)
