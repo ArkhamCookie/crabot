@@ -16,7 +16,7 @@ func currentTime() string {
 	return convertedTime
 }
 
-func TestShortDate(t *testing.T) {
+func TestCurrentShortDate(t *testing.T) {
 	now := currentTime()
 
 	want := regexp.MustCompile("<t:" + now + ":d>")
@@ -28,7 +28,7 @@ func TestShortDate(t *testing.T) {
 	}
 }
 
-func TestLongDate(t *testing.T) {
+func TestCurrentLongDate(t *testing.T) {
 	now := currentTime()
 
 	want := regexp.MustCompile("<t:" + now + ":D>")
@@ -40,7 +40,7 @@ func TestLongDate(t *testing.T) {
 	}
 }
 
-func TestShortTime(t *testing.T) {
+func TestCurrentShortTime(t *testing.T) {
 	now := currentTime()
 
 	want := regexp.MustCompile("<t:" + now + ":t>")
@@ -52,7 +52,7 @@ func TestShortTime(t *testing.T) {
 	}
 }
 
-func TestLongTime(t *testing.T) {
+func TestCurrentLongTime(t *testing.T) {
 	now := currentTime()
 
 	want := regexp.MustCompile("<t:" + now + ":T>")
@@ -64,7 +64,7 @@ func TestLongTime(t *testing.T) {
 	}
 }
 
-func TestShortFull(t *testing.T) {
+func TestCurrentShortFull(t *testing.T) {
 	now := currentTime()
 
 	want := regexp.MustCompile("<t:" + now + ":f>")
@@ -76,7 +76,7 @@ func TestShortFull(t *testing.T) {
 	}
 }
 
-func TestLongFull(t *testing.T) {
+func TestCurrentLongFull(t *testing.T) {
 	now := currentTime()
 
 	want := regexp.MustCompile("<t:" + now + ":F>")
@@ -88,7 +88,7 @@ func TestLongFull(t *testing.T) {
 	}
 }
 
-func TestRelativeTime(t *testing.T) {
+func TestCurrentRelativeTime(t *testing.T) {
 	now := currentTime()
 
 	want := regexp.MustCompile("<t:" + now + ":R>")
