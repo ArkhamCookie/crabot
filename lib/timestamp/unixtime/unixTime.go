@@ -2,11 +2,12 @@ package unixtime
 
 import (
 	"errors"
-	"strings"
 	"time"
 )
 
 func UnixTime(year, month, day, hour, minute, second int, timezone string) (int64, error) {
+	var err error
+	var gottenTimezone *time.Location
 	var timeMonth time.Month
 
 	switch month {
@@ -38,18 +39,12 @@ func UnixTime(year, month, day, hour, minute, second int, timezone string) (int6
 		return 0, errors.New("invaild month given")
 	}
 
-	var location *time.Location
-
-	timezone = strings.ToLower(timezone)
-
-	switch timezone {
-	case "utc":
-		location = time.UTC
-	default:
-		return 0, errors.New("unknown timezone given")
+	gottenTimezone, err = time.LoadLocation(timezone)
+	if err != nil {
+		return 0, err
 	}
 
-	wantedTime := time.Date(year, timeMonth, day, hour, hour, minute, second, location).Unix()
+	wantedTime := time.Date(year, timeMonth, day, hour, hour, minute, second, gottenTimezone).Unix()
 
 	return wantedTime, nil
 }

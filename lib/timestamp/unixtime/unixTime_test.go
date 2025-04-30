@@ -7,7 +7,7 @@ import (
 )
 
 func TestUnixTimeBasic(t *testing.T) {
-	output, err := unixtime.UnixTime(2025, 12, 12, 12, 12, 00, "utc")
+	output, err := unixtime.UnixTime(2025, 12, 12, 12, 12, 00, "UTC")
 
 	if err != nil {
 		t.Fatal("error thrown:", err)
