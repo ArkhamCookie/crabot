@@ -147,7 +147,7 @@ var (
 				{
 					Type:        discordgo.ApplicationCommandOptionString,
 					Name:        "timezone",
-					Description: "Timezone for timestamp to be in (tz timezone format)",
+					Description: "Timezone in (tz timezone format)",
 				},
 			},
 		},
