@@ -11,7 +11,6 @@ import (
 
 	"crabot/crabtalk"
 	"crabot/dice"
-	"crabot/formatting/markdown"
 	"crabot/timestamp"
 	"internal/dicecmd"
 	"internal/env"
@@ -224,8 +223,7 @@ var (
 				margsString := fmt.Sprint(margs)
 
 				translatedText, _ := crabtalk.Get(margsString)
-				msgformat += markdown.Blockquote(translatedText)
-				msgformat += "\n"
+				msgformat += fmt.Sprintf("> %v\n", translatedText)
 			}
 
 			session.InteractionRespond(interaction.Interaction, &discordgo.InteractionResponse{

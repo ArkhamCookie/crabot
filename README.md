@@ -9,8 +9,6 @@ Whether you need a basic Discord bot in a *pinch* or want to spice up your serve
 
 ### Util
 
-- [formatting/markdown](/lib/formatting/markdown)
-  — Formatting for [Discord's markdown syntax](https://www.markdownguide.org/tools/discord/).
 - [timestamp](/lib/timestamp/)
   — Generate timestamps for Discord
 

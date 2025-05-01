@@ -5,8 +5,6 @@ use (
 	./lib/crabtalk
 	./lib/dice
 	./lib/dice/roll
-	./lib/formatting
-	./lib/formatting/markdown
 	./lib/timestamp
 	./lib/timestamp/unixtime
 
