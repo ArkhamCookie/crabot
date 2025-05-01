@@ -5,7 +5,6 @@ go 1.24.2
 require (
 	crabot/crabtalk v0.0.0
 	crabot/dice v0.0.0
-	crabot/formatting/markdown v0.0.0
 	internal/dicecmd v0.0.0
 	internal/env v0.0.0
 )
@@ -28,8 +27,6 @@ replace (
 	crabot/crabtalk => ./lib/crabtalk
 	crabot/dice => ./lib/dice
 	crabot/dice/roll => ./lib/dice/roll
-	crabot/formatting => ./lib/formatting
-	crabot/formatting/markdown => ./lib/formatting/markdown
 	crabot/timestamp => ./lib/timestamp
 	crabot/timestamp/unixtime => ./lib/timestamp/unixtime
 	internal/dicecmd => ./internal/dicecmd
