@@ -7,10 +7,12 @@ import (
 	"os"
 	"os/signal"
 	"strings"
+	"time"
 
 	"crabot/crabtalk"
 	"crabot/dice"
 	"crabot/formatting/markdown"
+	"crabot/timestamp"
 	"internal/dicecmd"
 	"internal/env"
 
@@ -105,6 +107,47 @@ var (
 					Name:        "call",
 					Description: "Call the coin in the air",
 					Required:    false,
+				},
+			},
+		},
+		{
+			// Command to generate timestamps
+			Name:        "timestamp",
+			Description: "Generate a timestamp of given time",
+			Options: []*discordgo.ApplicationCommandOption{
+				{
+					Type:        discordgo.ApplicationCommandOptionInteger,
+					Name:        "year",
+					Description: "Year of timestamp",
+					Required:    false,
+				},
+				{
+					Type:        discordgo.ApplicationCommandOptionInteger,
+					Name:        "month",
+					Description: "Month of timestamp",
+					Required:    false,
+				},
+				{
+					Type:        discordgo.ApplicationCommandOptionInteger,
+					Name:        "day",
+					Description: "Day of timestamp",
+					Required:    false,
+				},
+				{
+					Type:        discordgo.ApplicationCommandOptionInteger,
+					Name:        "hour",
+					Description: "Hour of timestamp",
+					Required:    false,
+				},
+				{
+					Type:        discordgo.ApplicationCommandOptionInteger,
+					Name:        "minute",
+					Description: "Minute of timestamp",
+				},
+				{
+					Type:        discordgo.ApplicationCommandOptionString,
+					Name:        "timezone",
+					Description: "Timezone for timestamp to be in (tz timezone format)",
 				},
 			},
 		},
@@ -219,6 +262,98 @@ var (
 				Type: discordgo.InteractionResponseChannelMessageWithSource,
 				Data: &discordgo.InteractionResponseData{
 					Content: message,
+				},
+			})
+		},
+		"timestamp": func(session *discordgo.Session, interaction *discordgo.InteractionCreate) {
+			options := interaction.ApplicationCommandData().Options
+
+			optionMap := make(map[string]*discordgo.ApplicationCommandInteractionDataOption, len(options))
+			for _, opt := range options {
+				optionMap[opt.Name] = opt
+			}
+
+			// Get current time
+			now := time.Now()
+
+			// Setup defaults for timestamp options
+			year := int(now.Year())
+			month := int(now.Month())
+			day := int(now.Day())
+			hour := int(now.Hour())
+			minute := int(now.Minute())
+
+			timezone := "UTC"
+
+			// Get user entered options
+			if option, ok := optionMap["year"]; ok {
+				year = int(option.IntValue())
+			}
+			if option, ok := optionMap["month"]; ok {
+				month = int(option.IntValue())
+			}
+			if option, ok := optionMap["day"]; ok {
+				day = int(option.IntValue())
+			}
+			if option, ok := optionMap["hour"]; ok {
+				hour = int(option.IntValue())
+			}
+			if option, ok := optionMap["minute"]; ok {
+				minute = int(option.IntValue())
+			}
+			if option, ok := optionMap["timezone"]; ok {
+				timezone = option.StringValue()
+			}
+
+			// Message formatting
+			var msgformat string
+
+			shortDate, err := timestamp.ShortDate(year, month, day, hour, minute, 00, timezone)
+			if err != nil {
+				log.Panicf("[ERROR]: %v\n", err)
+			}
+			msgformat += fmt.Sprintf("> `%v` -> %v\n", shortDate, shortDate)
+
+			longDate, err := timestamp.LongDate(year, month, day, hour, minute, 00, timezone)
+			if err != nil {
+				log.Panicf("[ERROR]: %v\n", err)
+			}
+			msgformat += fmt.Sprintf("> `%v` -> %v\n", longDate, longDate)
+
+			shortTime, err := timestamp.ShortTime(year, month, day, hour, minute, 00, timezone)
+			if err != nil {
+				log.Panicf("[ERROR]: %v\n", err)
+			}
+			msgformat += fmt.Sprintf("> `%v` -> %v\n", shortTime, shortTime)
+
+			longTime, err := timestamp.LongTime(year, month, day, hour, minute, 00, timezone)
+			if err != nil {
+				log.Printf("[ERROR]: %v\n", err)
+			}
+			msgformat += fmt.Sprintf("> `%v` -> %v\n", longTime, longTime)
+
+			shortFull, err := timestamp.ShortFull(year, month, day, hour, minute, 00, timezone)
+			if err != nil {
+				log.Printf("[ERROR]: %v\n", err)
+			}
+			msgformat += fmt.Sprintf("> `%v` -> %v\n", shortFull, shortFull)
+
+			longFull, err := timestamp.LongFull(year, month, day, hour, minute, 00, timezone)
+			if err != nil {
+				log.Printf("[ERROR]: %v\n", err)
+			}
+			msgformat += fmt.Sprintf("> `%v` -> %v\n", longFull, longFull)
+
+			relativeTime, err := timestamp.RelativeTime(year, month, day, hour, minute, 00, timezone)
+			if err != nil {
+				log.Printf("[ERROR]: %v\n", err)
+			}
+			msgformat += fmt.Sprintf("> `%v` -> %v\n", relativeTime, relativeTime)
+
+			session.InteractionRespond(interaction.Interaction, &discordgo.InteractionResponse{
+				Type: discordgo.InteractionResponseChannelMessageWithSource,
+				Data: &discordgo.InteractionResponseData{
+					Content: msgformat,
 				},
 			})
 		},
