@@ -78,6 +78,19 @@ var (
 			},
 		},
 		{
+			// Coin flipping command
+			Name:        "coinflip",
+			Description: "Flip a coin and optionally call it in the air",
+			Options: []*discordgo.ApplicationCommandOption{
+				{
+					Type:        discordgo.ApplicationCommandOptionString,
+					Name:        "call",
+					Description: "Call the coin in the air",
+					Required:    false,
+				},
+			},
+		},
+		{
 			// Dice rolling command
 			Name:        "dice",
 			Description: "Roll a given number of dice types",
@@ -92,19 +105,6 @@ var (
 					Type:        discordgo.ApplicationCommandOptionInteger,
 					Name:        "amount",
 					Description: "Amount of dice to roll",
-					Required:    false,
-				},
-			},
-		},
-		{
-			// Coin flipping command
-			Name:        "coinflip",
-			Description: "Flip a coin and optionally call it in the air",
-			Options: []*discordgo.ApplicationCommandOption{
-				{
-					Type:        discordgo.ApplicationCommandOptionString,
-					Name:        "call",
-					Description: "Call the coin in the air",
 					Required:    false,
 				},
 			},
