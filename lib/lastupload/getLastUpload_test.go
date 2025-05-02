@@ -12,7 +12,7 @@ func TestGetLastUploadData(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	_, err = lastupload.GetLastUploadData("spiritvoices", YOUTUBE_KEY)
+	_, err = lastupload.GetLastUploadData("UUi_0J4Zm1qwiYVSGRsA0_Bg", YOUTUBE_KEY)
 	if err != nil {
 		t.Fatal(err)
 	}

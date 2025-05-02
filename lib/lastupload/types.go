@@ -66,7 +66,7 @@ type UploadsPlaylistSearch struct {
 }
 
 // Last upload results
-type LastUploadResults struct {
+type LastUploadResults []struct {
 	Items []struct {
 		Kind    string `json:"kind"`
 		Etag    string `json:"etag"`
