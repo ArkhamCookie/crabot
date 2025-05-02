@@ -3,6 +3,8 @@ package lastupload
 import "time"
 
 // Generated with [JSON-to-Go](https://mholt.github.io/json-to-go/)
+
+// Data fetched when search for channels
 type ChannelSearch struct {
 	Kind          string `json:"kind"`
 	Etag          string `json:"etag"`
@@ -42,6 +44,7 @@ type ChannelSearch struct {
 	} `json:"items"`
 }
 
+// Data fetched when searching for uploads playerlist
 type UploadsPlaylistSearch struct {
 	Kind     string `json:"kind"`
 	Etag     string `json:"etag"`
