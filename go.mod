@@ -27,6 +27,7 @@ replace (
 	crabot/crabtalk => ./lib/crabtalk
 	crabot/dice => ./lib/dice
 	crabot/dice/roll => ./lib/dice/roll
+	crabot/lastupload => ./lib/lastupload
 	crabot/timestamp => ./lib/timestamp
 	crabot/timestamp/unixtime => ./lib/timestamp/unixtime
 	internal/dicecmd => ./internal/dicecmd
