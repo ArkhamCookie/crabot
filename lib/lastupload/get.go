@@ -1,6 +1,6 @@
 package lastupload
 
-func GetTimeOfLastUpload(username, YOUTUBE_KEY string) (*LastUploadResults, error) {
+func Get(username, YOUTUBE_KEY string) ([]LastUploadResults, error) {
 	channelID, err := GetChannelID(username, YOUTUBE_KEY)
 	if err != nil {
 		return nil, err
