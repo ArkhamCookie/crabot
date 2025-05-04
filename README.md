@@ -9,6 +9,8 @@ Whether you need a basic Discord bot in a *pinch* or want to spice up your serve
 
 ### Util
 
+- [lastupload](/lib/lastupload/)
+  — Get info about a YouTuber's last upload
 - [timestamp](/lib/timestamp/)
   — Generate timestamps for Discord
 

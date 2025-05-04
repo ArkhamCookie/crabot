@@ -5,6 +5,7 @@ use (
 	./lib/crabtalk
 	./lib/dice
 	./lib/dice/roll
+	./lib/lastupload
 	./lib/timestamp
 	./lib/timestamp/unixtime
 

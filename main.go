@@ -11,6 +11,7 @@ import (
 
 	"crabot/crabtalk"
 	"crabot/dice"
+	"crabot/lastupload"
 	"crabot/timestamp"
 	"internal/dicecmd"
 	"internal/env"
@@ -78,6 +79,19 @@ var (
 			},
 		},
 		{
+			// Coin flipping command
+			Name:        "coinflip",
+			Description: "Flip a coin and optionally call it in the air",
+			Options: []*discordgo.ApplicationCommandOption{
+				{
+					Type:        discordgo.ApplicationCommandOptionString,
+					Name:        "call",
+					Description: "Call the coin in the air",
+					Required:    false,
+				},
+			},
+		},
+		{
 			// Dice rolling command
 			Name:        "dice",
 			Description: "Roll a given number of dice types",
@@ -97,15 +111,15 @@ var (
 			},
 		},
 		{
-			// Coin flipping command
-			Name:        "coinflip",
-			Description: "Flip a coin and optionally call it in the air",
+			// Command to get last upload info
+			Name:        "lastupload",
+			Description: "Get info about the last time someone uploaded on youtube",
 			Options: []*discordgo.ApplicationCommandOption{
 				{
 					Type:        discordgo.ApplicationCommandOptionString,
-					Name:        "call",
-					Description: "Call the coin in the air",
-					Required:    false,
+					Name:        "username",
+					Description: "Username of the youtuber",
+					Required:    true,
 				},
 			},
 		},
@@ -260,6 +274,61 @@ var (
 				Type: discordgo.InteractionResponseChannelMessageWithSource,
 				Data: &discordgo.InteractionResponseData{
 					Content: message,
+				},
+			})
+		},
+		"lastupload": func(session *discordgo.Session, interaction *discordgo.InteractionCreate) {
+			options := interaction.ApplicationCommandData().Options
+
+			optionMap := make(map[string]*discordgo.ApplicationCommandInteractionDataOption, len(options))
+			for _, opt := range options {
+				optionMap[opt.Name] = opt
+			}
+
+			var username string
+			if option, ok := optionMap["username"]; ok {
+				username = option.StringValue()
+			}
+
+			fetechedCorrectly := true
+
+			YOUTUBE_KEY, err := env.GetEnvValue("YOUTUBE_KEY", "./.env")
+			if err != nil {
+				fetechedCorrectly = false
+				log.Printf("[ERROR]: %v\n", err)
+			}
+
+			lastUploadData, err := lastupload.Get(username, YOUTUBE_KEY)
+			if err != nil {
+				fetechedCorrectly = false
+				log.Printf("[ERROR]: %v\n", err)
+			}
+
+			uploadDate, err := lastupload.GetDate(lastUploadData)
+			if err != nil {
+				fetechedCorrectly = false
+				log.Printf("[ERROR]: %v\n", err)
+			}
+
+			// Get Unix timestamp for formating with Discord's timestamps
+			uploadDateUnix := uploadDate.Unix()
+
+			// Get wanted Discord timestamps
+			// TODO: Make a unix timestamp generator for `crabot/timestamps`
+			uploadDateRelativeTimestamp := fmt.Sprintf("<t:%v:R>", uploadDateUnix)
+			uploadDateFullTimestamp := fmt.Sprintf("<t:%v:F>", uploadDateUnix)
+
+			msgformat := fmt.Sprintf("YouTuber **%v** last uploaded %v ago on %v.", username, uploadDateRelativeTimestamp, uploadDateFullTimestamp)
+
+			// Confirm infomation was fetched correctly.
+			if !fetechedCorrectly {
+				msgformat = `[ERROR]: Issue fetching data; see log for more info`
+			}
+
+			session.InteractionRespond(interaction.Interaction, &discordgo.InteractionResponse{
+				Type: discordgo.InteractionResponseChannelMessageWithSource,
+				Data: &discordgo.InteractionResponseData{
+					Content: msgformat,
 				},
 			})
 		},
