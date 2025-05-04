@@ -81,8 +81,7 @@
   - [x] D00
 - [x] Coin
   - [x] Flip
-  - [ ] Call
-- [ ] Roll
+- [x] Roll
 
 <!-- ### [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) -->
 
