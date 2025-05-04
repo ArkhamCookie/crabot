@@ -3,36 +3,9 @@
 
 ## Crabot General
 
-- [ ] Setup webhook for Discord changelogs (?)
-
-## Libs
-
-### `lib/dice`
-
-- [x] Dice Types
-  - [x] D2
-  - [x] D4
-  - [x] D6
-  - [x] D8
-  - [x] D10
-  - [x] D12
-  - [x] D20
-  - [x] D00
-- [x] Coin
-  - [x] Flip
-  - [x] Call
-
 ## Documentation
 
 - [ ] **Better** Support Docs
-
-### `lib/crabtalk`
-
-- [x] README.md
-
-### `lib/dice`
-
-- [x] README.md
 
 ## Examples
 
@@ -42,34 +15,6 @@
 - [ ] roll
 
 ## Continuous Integration
-
-### Linting
-
-- [x] gofmt
-- [x] govet
-
-### Golang Tests
-
-#### `lib/crabtalk`
-
-- [x] basic
-
-##### `lib/dice`
-
-- [x] Dice Types
-  - [x] D2
-  - [x] D4
-  - [x] D6
-  - [x] D8
-  - [x] D10
-  - [x] D12
-  - [x] D20
-  - [x] D00
-- [x] Coin
-  - [x] Flip
-- [x] Roll
-
-<!-- ### [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) -->
 
 ### GitHub Actions
 
@@ -94,11 +39,3 @@
 ### Templates
 
 - [ ] [PR Templates](https://docs.github.com/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository)
-
-#### [Issue Templates](https://docs.github.com/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms)
-
-- [x] Issue Config File
-- [x] Bug Report
-- [x] Feature Request
-- [x] **FIX** Feature Request
-- [x] Support Question
