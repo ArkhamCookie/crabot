@@ -30,10 +30,6 @@
 
 - [x] README.md
 
-### `lib/formatting`
-
-- [x] README.md
-
 ### `lib/dice`
 
 - [x] README.md
