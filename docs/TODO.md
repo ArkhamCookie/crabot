@@ -45,8 +45,8 @@
 
 ### Linting
 
-- [ ] gofmt
-- [ ] goreportcard
+- [x] gofmt
+- [x] govet
 
 ### Golang Tests
 
