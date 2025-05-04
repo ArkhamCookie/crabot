@@ -113,7 +113,7 @@ var (
 		{
 			// Command to get last upload info
 			Name:        "lastupload",
-			Description: "Get info about the last time someone uploaded on youtube",
+			Description: "Get info about the last time someone uploaded on Youtube",
 			Options: []*discordgo.ApplicationCommandOption{
 				{
 					Type:        discordgo.ApplicationCommandOptionString,
