@@ -58,16 +58,6 @@
 
 - [x] basic
 
-#### `lib/formatting`
-
-- [x] Italics
-- [x] Bold
-- [x] Bold + Italic
-- [x] Strikethrough
-- [x] Blockquote
-- [x] Unordered List
-- [ ] Ordered List
-
 ##### `lib/dice`
 
 - [x] Dice Types
