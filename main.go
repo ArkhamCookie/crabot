@@ -113,13 +113,26 @@ var (
 		{
 			// Command to get last upload info
 			Name:        "lastupload",
-			Description: "Get info about the last time someone uploaded on youtube",
+			Description: "Get info about the last time someone uploaded on Youtube",
 			Options: []*discordgo.ApplicationCommandOption{
 				{
 					Type:        discordgo.ApplicationCommandOptionString,
 					Name:        "username",
 					Description: "Username of the youtuber",
 					Required:    true,
+				},
+			},
+		},
+		{
+			// Help command
+			Name:        "help",
+			Description: "Get help on usage of commands",
+			Options: []*discordgo.ApplicationCommandOption{
+				{
+					Type:        discordgo.ApplicationCommandOptionString,
+					Name:        "command",
+					Description: "Command you want help with",
+					Required:    false,
 				},
 			},
 		},
@@ -274,6 +287,66 @@ var (
 				Type: discordgo.InteractionResponseChannelMessageWithSource,
 				Data: &discordgo.InteractionResponseData{
 					Content: message,
+				},
+			})
+		},
+		// basic-command handler
+		"help": func(session *discordgo.Session, interaction *discordgo.InteractionCreate) {
+			options := interaction.ApplicationCommandData().Options
+
+			optionMap := make(map[string]*discordgo.ApplicationCommandInteractionDataOption, len(options))
+			for _, opt := range options {
+				optionMap[opt.Name] = opt
+			}
+
+			var command string
+			if option, ok := optionMap["command"]; ok {
+				command = option.StringValue()
+			}
+
+			var msgformat string
+			switch command {
+			case "basic-command":
+				msgformat += "> `/basic-command`\n"
+				msgformat += "> Runs a basic command to confirm everything is working\n"
+			case "crabtalk":
+				msgformat += "> `/crabtalk <text-to-translate>`\n"
+				msgformat += "> Translates *text-to-translate* to crab\n"
+				msgformat += "> `text-to-translate`: Text to translate into crab (string)\n"
+			case "coinflip":
+				msgformat += "> `/coinflip [guess]`\n"
+				msgformat += "> Flips a coin that you can optionally *guess* before it lands.\n"
+				msgformat += "> `guess`: heads or tails\n"
+			case "dice":
+				msgformat += "> `/dice [type] [times]`\n"
+				msgformat += "> Rolls the given *type* (defaults to D6) of dice given amount of *times* (defaults to 1)\n"
+				msgformat += "> `types`: D2, D4, D6, D8, D10, D12, D20, D100\n"
+			case "lastupload":
+				msgformat += "> `/lastupload <username>`\n"
+				msgformat += "> Fetches the last upload date of a YouTube *username*.\n"
+				msgformat += "> `username`: YouTubers's name (string)\n"
+			case "help":
+				msgformat += "> `/help [command]`\n"
+				msgformat += "> Shows help message for *command* or overview of all commands\n"
+				msgformat += "> `command`: Commands you want help with\n"
+			case "timestamp":
+				msgformat += "> `/timestamp [year] [month] [day] [hour] [minute] [timezone]`\n"
+				msgformat += "> Generates a timestamp based on given time.\n"
+				msgformat += "> Any options omitted default to current time besides timezone which defaults to UTC\n"
+			default:
+				msgformat += "> `basic-command`: Run a basic test command\n"
+				msgformat += "> `crabtalk`: Translates text to crab\n"
+				msgformat += "> `coinflip`: Flips a coin optionally allowing you to guess it in the air\n"
+				msgformat += "> `dice`: Rolls given type of dice an amount of times\n"
+				msgformat += "> `lastupload`: Fetches the last upload date of a YouTuber\n"
+				msgformat += "> `help`: This command; optionally pass a command to get more help for it\n"
+				msgformat += "> `timestamp`: Generate a Discord timestamp\n"
+			}
+
+			session.InteractionRespond(interaction.Interaction, &discordgo.InteractionResponse{
+				Type: discordgo.InteractionResponseChannelMessageWithSource,
+				Data: &discordgo.InteractionResponseData{
+					Content: msgformat,
 				},
 			})
 		},
