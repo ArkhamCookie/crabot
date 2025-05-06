@@ -51,7 +51,7 @@ func DetermineDiceRoll(diceType string, diceAmount int) int {
 	case "D20":
 		return dice.D20(diceAmount)
 	default:
-		log.Println("WARNING: Unsupported dice type: %s", diceType)
+		log.Printf("WARNING: Unsupported dice type: %s\n", diceType)
 
 		return dice.D6(diceAmount)
 	}
