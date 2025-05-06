@@ -500,9 +500,12 @@ var (
 	}
 )
 
-func main() {
+func init() {
 	// Parse flags
 	flag.Parse()
+}
+
+func main() {
 
 	// Get credentials
 	getCredentials()
