@@ -7,19 +7,12 @@
 
 - [ ] **Better** Support Docs
 
-## Examples
-
-- [ ] crabtalk
-- [ ] formatting
-- [ ] dice
-- [ ] roll
-
 ## Continuous Integration
 
 ### GitHub Actions
 
 - [ ] [Deploying to fly.io](https://fly.io/docs/app-guides/continuous-deployment-with-github-actions/)
-- [ ] [Setup Go](https://github.com/actions/setup-go/)
+- [x] [Setup Go](https://github.com/actions/setup-go/)
 - [ ] [Create Releases](https://docs.github.com/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
 <!-- - [ ] GitHub Pages -->
 
