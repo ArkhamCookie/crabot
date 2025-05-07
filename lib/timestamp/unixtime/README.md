@@ -12,7 +12,7 @@ package main
 import (
   "fmt"
 
-  "github.com/arkhamcookie/crabot/timestamp/unixtime"
+  "github.com/ArkhamCookie/crabot/lib/timestamp/unixtime"
 )
 
 func main() {
