@@ -7,13 +7,13 @@ import (
 	"crabot/lastupload"
 )
 
-func TestGet(t *testing.T) {
+func TestGetData(t *testing.T) {
 	YOUTUBE_KEY, err := env.GetEnvValue("YOUTUBE_KEY", "./../../.env")
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	_, err = lastupload.Get("spiritvoices", YOUTUBE_KEY)
+	_, err = lastupload.GetData("spiritvoices", YOUTUBE_KEY)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -25,7 +25,7 @@ func TestGetDate(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	lastUploadData, err := lastupload.Get("spiritvoices", YOUTUBE_KEY)
+	lastUploadData, err := lastupload.GetData("spiritvoices", YOUTUBE_KEY)
 	if err != nil {
 		t.Fatal(err)
 	}

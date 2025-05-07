@@ -371,7 +371,7 @@ var (
 				log.Printf("[ERROR]: %v\n", err)
 			}
 
-			lastUploadData, err := lastupload.Get(username, YOUTUBE_KEY)
+			lastUploadData, err := lastupload.GetData(username, YOUTUBE_KEY)
 			if err != nil {
 				fetechedCorrectly = false
 				log.Printf("[ERROR]: %v\n", err)
