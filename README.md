@@ -19,4 +19,6 @@ Whether you need a basic Discord bot in a *pinch* or want to spice up your serve
 - [crabtalk](/lib/crabtalk/)
   — Communicate in crab!
 - [dice](/lib/dice/)
-  — For all your dice rolling needs
+  — For most of your dice rolling needs
+  - [roll](/lib/dice/roll/)
+  — For the rest of your dice rolling needs
