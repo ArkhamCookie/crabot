@@ -8,6 +8,7 @@ import (
 	"net/http"
 )
 
+// Get a channel's ID based on the given YouTube username.
 func GetChannelID(username, YOUTUBE_KEY string) (string, error) {
 	response, err := http.Get("https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + username + "&type=channel&key=" + YOUTUBE_KEY)
 	if err != nil {
