@@ -12,7 +12,7 @@ package main
 import (
   "fmt"
 
-  "github.com/arkhamcookie/crabot/lastupload"
+  "github.com/ArkhamCookie/crabot/lib/lastupload"
 )
 
 func main() {
@@ -36,7 +36,7 @@ package main
 import (
   "fmt"
 
-  "github.com/arkhamcookie/crabot/lastupload"
+  "github.com/ArkhamCookie/crabot/lib/lastupload"
 )
 
 func main() {

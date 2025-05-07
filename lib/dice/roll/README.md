@@ -12,7 +12,7 @@ package main
 import (
   "fmt"
 
-  "github.com/arkhamcookie/crabot/dice/roll"
+  "github.com/ArkhamCookie/crabot/lib/dice/roll"
 )
 
 func main() {
