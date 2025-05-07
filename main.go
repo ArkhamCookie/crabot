@@ -505,7 +505,6 @@ func init() {
 }
 
 func main() {
-
 	// Get credentials
 	getCredentials()
 
