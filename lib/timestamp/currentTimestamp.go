@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-// Get current time's unix time as a string
+// Get current time's unix time as a string.
 func currentTime() string {
 	timeStart := time.Now().Unix()
 	convertedTime := strconv.FormatInt(timeStart, 10)
