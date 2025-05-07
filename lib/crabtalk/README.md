@@ -1,6 +1,6 @@
 # crabot/crabtalk
 
-Translate English [^1] to crab.
+Translate English to crab.
 
 ## How it Works
 
@@ -21,9 +21,3 @@ Here is an example of crabtalk.
 .... . .-.. .-.. --- / .-- --- .-. .-.. -..
 clickclickclickclick click clickclackclickclick clickclackclickclick clackclackclack / clickclackclack clackclackclack clickclackclick clickclackclickclick clackclickclick
 ```
-
----
-
-[^1]: More languages planned!
-  See issue [#foo](https://github.com/ArkhamCookie/crabot/issues/) <!-- issue not created yet -->
-  This means we will also translate [non-Latin extensions/alphabets](https://wikipedia.org/wiki/Morse_code_for_non-Latin_alphabets).

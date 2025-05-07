@@ -5,7 +5,8 @@ import (
 	"time"
 )
 
-func Get(username, YOUTUBE_KEY string) ([]LastUploadResults, error) {
+// Get the data related to latest upload based on YouTube username.
+func GetData(username, YOUTUBE_KEY string) ([]LastUploadResults, error) {
 	channelID, err := GetChannelID(username, YOUTUBE_KEY)
 	if err != nil {
 		return nil, err
@@ -24,6 +25,9 @@ func Get(username, YOUTUBE_KEY string) ([]LastUploadResults, error) {
 	return lastUploadData, nil
 }
 
+// Get the date of the lastest upload based on LastUploadResults.
+//
+// LastUploadResults can be gotten by running the `lastupload.Get` functiion.
 func GetDate(lastUploadResults []LastUploadResults) (time.Time, error) {
 	// Get last upload date from lastUploadResults
 	lastUpload := lastUploadResults[0].Snippet.PublishedAt.String()

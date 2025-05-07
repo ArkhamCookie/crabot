@@ -26,7 +26,7 @@ func convert(text string) string {
 	return text
 }
 
-// Get the *text* in "crab"
+// Get the `text` in "crab"
 func Get(text string) (string, error) {
 	// Confirm that text is given
 	if text == "" {

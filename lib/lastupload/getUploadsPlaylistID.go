@@ -8,6 +8,7 @@ import (
 	"net/http"
 )
 
+// Get a channel upload playlist from a channel ID.
 func GetUploadsPlaylistID(channelID, YOUTUBE_KEY string) (string, error) {
 	response, err := http.Get("https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=" + channelID + "&key=" + YOUTUBE_KEY)
 	if err != nil {

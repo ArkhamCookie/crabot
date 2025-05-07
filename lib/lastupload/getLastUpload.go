@@ -8,6 +8,7 @@ import (
 	"net/http"
 )
 
+// Get the data related to latest upload based on upload playlist ID.
 func GetLastUploadData(upload_playlist_id, YOUTUBE_KEY string) ([]LastUploadResults, error) {
 	response, err := http.Get("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=" + upload_playlist_id + "&maxResults=1&key=" + YOUTUBE_KEY)
 	if err != nil {
