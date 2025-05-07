@@ -387,8 +387,8 @@ var (
 			uploadDateUnix := uploadDate.Unix()
 
 			// Get wanted Discord timestamps
-			uploadDateRelativeTimestamp := timestamp.UnixRelativeTime(int(uploadDateUnix))
-			uploadDateFullTimestamp := timestamp.UnixLongFull(int(uploadDateUnix))
+			uploadDateRelativeTimestamp := timestamp.UnixRelativeTime(uploadDateUnix)
+			uploadDateFullTimestamp := timestamp.UnixLongFull(uploadDateUnix)
 
 			msgformat := fmt.Sprintf("YouTuber **%v** last uploaded %v ago on %v.", username, uploadDateRelativeTimestamp, uploadDateFullTimestamp)
 
