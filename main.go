@@ -387,9 +387,8 @@ var (
 			uploadDateUnix := uploadDate.Unix()
 
 			// Get wanted Discord timestamps
-			// TODO: Make a unix timestamp generator for `crabot/timestamps`
-			uploadDateRelativeTimestamp := fmt.Sprintf("<t:%v:R>", uploadDateUnix)
-			uploadDateFullTimestamp := fmt.Sprintf("<t:%v:F>", uploadDateUnix)
+			uploadDateRelativeTimestamp := timestamp.UnixRelativeTime(int(uploadDateUnix))
+			uploadDateFullTimestamp := timestamp.UnixLongFull(int(uploadDateUnix))
 
 			msgformat := fmt.Sprintf("YouTuber **%v** last uploaded %v ago on %v.", username, uploadDateRelativeTimestamp, uploadDateFullTimestamp)
 
