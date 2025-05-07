@@ -21,3 +21,21 @@ Here is an example of crabtalk.
 .... . .-.. .-.. --- / .-- --- .-. .-.. -..
 clickclickclickclick click clickclackclickclick clickclackclickclick clackclackclack / clickclackclack clackclackclack clickclackclick clickclackclickclick clackclickclick
 ```
+
+## Examples
+
+### Basic Example
+
+```golang
+import (
+  "fmt"
+
+  "github.com/ArkhamCookie/crabot/lib/crabtalk"
+)
+
+func main() {
+  crab, _ := crabtalk.Get("Hello World")
+
+  fmt.Println(crab) // "clickclickclickclick click clickclackclickclick clickclackclickclick clackclackclack / clickclackclack clackclackclack clickclackclick clickclackclickclick clackclickclick"
+}
+```
