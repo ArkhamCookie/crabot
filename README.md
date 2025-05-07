@@ -13,6 +13,8 @@ Whether you need a basic Discord bot in a *pinch* or want to spice up your serve
   — Get info about a YouTuber's last upload
 - [timestamp](/lib/timestamp/)
   — Generate timestamps for Discord
+  - [unixtime](/lib/timestamp/unixtime/)
+    — Get unix time from given time variables
 
 ### Fun
 
