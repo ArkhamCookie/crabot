@@ -23,4 +23,4 @@ Whether you need a basic Discord bot in a *pinch* or want to spice up your serve
 - [dice](/lib/dice/)
   — For most of your dice rolling needs
   - [roll](/lib/dice/roll/)
-  — For the rest of your dice rolling needs
+    — For the rest of your dice rolling needs
