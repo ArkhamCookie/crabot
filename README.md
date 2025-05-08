@@ -2,6 +2,7 @@
 
 [![Support Me Badge](https://img.shields.io/badge/Support_Me-blue?logo=kofi)](https://ko-fi.com/arkhamcookie)
 [![Go Report Card](https://goreportcard.com/badge/github.com/ArkhamCookie/crabot)](https://goreportcard.com/report/github.com/ArkhamCookie/crabot)
+[![Go Reference](https://pkg.go.dev/badge/github.com/arkhamcookie/crabot/.svg)](https://pkg.go.dev/github.com/arkhamcookie/crabot/)
 
 Whether you need a basic Discord bot in a *pinch* or want to spice up your server with style, CraBot is the bot for you.
 
