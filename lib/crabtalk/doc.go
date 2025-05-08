@@ -1,2 +1,2 @@
-// Translate English to crab.
+// Package translates English to crab.
 package crabtalk
