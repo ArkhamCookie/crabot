@@ -5,7 +5,7 @@ import "time"
 // Generated with [JSON-to-Go](https://mholt.github.io/json-to-go/)
 
 // Data fetched when search for channels
-type ChannelSearch struct {
+type channelSearch struct {
 	Kind          string `json:"kind"`
 	Etag          string `json:"etag"`
 	NextPageToken string `json:"nextPageToken"`
@@ -45,7 +45,7 @@ type ChannelSearch struct {
 }
 
 // Data fetched when searching for uploads playerlist
-type UploadsPlaylistSearch struct {
+type uploadsPlaylistSearch struct {
 	Kind     string `json:"kind"`
 	Etag     string `json:"etag"`
 	PageInfo struct {

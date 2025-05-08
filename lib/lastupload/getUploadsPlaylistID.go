@@ -26,7 +26,7 @@ func GetUploadsPlaylistID(channelID, YOUTUBE_KEY string) (string, error) {
 		return "", errors.New(errMsg)
 	}
 
-	var data *UploadsPlaylistSearch
+	var data *uploadsPlaylistSearch
 	err = json.Unmarshal([]byte(body), &data)
 	if err != nil {
 		return "", err
