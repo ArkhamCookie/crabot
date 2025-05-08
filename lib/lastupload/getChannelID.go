@@ -26,7 +26,7 @@ func GetChannelID(username, YOUTUBE_KEY string) (string, error) {
 		return "", errors.New(errMsg)
 	}
 
-	var data *ChannelSearch
+	var data *channelSearch
 	err = json.Unmarshal([]byte(body), &data)
 	if err != nil {
 		return "", err
