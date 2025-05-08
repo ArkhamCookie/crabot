@@ -3,7 +3,7 @@ package dice
 import (
 	"errors"
 
-	"crabot/dice/roll"
+	"github.com/ArkhamCookie/crabot/dice/roll"
 )
 
 // CoinFlip flips a coin and get heads or tails.

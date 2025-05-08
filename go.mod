@@ -3,10 +3,12 @@ module github.com/ArkhamCookie/crabot
 go 1.24.2
 
 require (
-	crabot/crabtalk v0.0.0
-	crabot/dice v0.0.0
-	crabot/lastupload v0.0.0
-	crabot/timestamp v0.0.0
+	github.com/ArkhamCookie/crabot/lib/crabtalk v0.0.0
+	github.com/ArkhamCookie/crabot/lib/lastupload v0.0.0
+	github.com/ArkhamCookie/crabot/lib/timestamp v0.0.0
+)
+
+require (
 	internal/dicecmd v0.0.0
 	internal/env v0.0.0
 )
@@ -16,7 +18,12 @@ require (
 )
 
 require (
-	crabot/dice/roll v0.0.0 // indirect
+	github.com/ArkhamCookie/crabot/lib/dice v0.0.0 // indirect
+	github.com/ArkhamCookie/crabot/lib/dice/roll v0.0.0 // indirect
+	github.com/ArkhamCookie/crabot/lib/timestamp/unixtime v0.0.0 // indirect
+)
+
+require (
 	github.com/gSpera/morse v1.1.2 // indirect
 	github.com/gorilla/websocket v1.5.3 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
@@ -25,12 +32,15 @@ require (
 )
 
 replace (
-	crabot/crabtalk => ./lib/crabtalk
-	crabot/dice => ./lib/dice
-	crabot/dice/roll => ./lib/dice/roll
-	crabot/lastupload => ./lib/lastupload
-	crabot/timestamp => ./lib/timestamp
-	crabot/timestamp/unixtime => ./lib/timestamp/unixtime
+	github.com/ArkhamCookie/crabot/lib/crabtalk => ./lib/crabtalk
+	github.com/ArkhamCookie/crabot/lib/dice => ./lib/dice
+	github.com/ArkhamCookie/crabot/lib/dice/roll => ./lib/dice/roll
+	github.com/ArkhamCookie/crabot/lib/lastupload => ./lib/lastupload
+	github.com/ArkhamCookie/crabot/lib/timestamp => ./lib/timestamp
+	github.com/ArkhamCookie/crabot/lib/timestamp/unixtime => ./lib/timestamp/unixtime
+)
+
+replace (
 	internal/dicecmd => ./internal/dicecmd
 	internal/env => ./internal/env
 )

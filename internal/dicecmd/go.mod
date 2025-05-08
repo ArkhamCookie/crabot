@@ -3,7 +3,7 @@ module internal/dicecmd
 go 1.24.2
 
 require (
-	"crabot/dice" v0.0.0
+	github.com/ArkhamCookie/crabot/lib/dice v0.0.0
 )
 
 require (
@@ -11,6 +11,6 @@ require (
 )
 
 replace (
-	crabot/dice => ../../lib/dice
+	github.com/ArkhamCookie/crabot/lib/dice => ../../lib/dice
 	crabot/dice/roll => ../../lib/dice/roll
 )

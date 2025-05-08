@@ -3,8 +3,9 @@ package lastupload_test
 import (
 	"testing"
 
-	"crabot/lastupload"
 	"internal/env"
+
+	"github.com/ArkhamCookie/crabot/lib/lastupload"
 )
 
 func TestGetChannelID(t *testing.T) {

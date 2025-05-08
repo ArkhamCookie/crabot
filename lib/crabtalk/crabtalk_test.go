@@ -4,7 +4,7 @@ import (
 	"regexp"
 	"testing"
 
-	"crabot/crabtalk"
+	"github.com/ArkhamCookie/crabot/lib/crabtalk"
 )
 
 func TestCrabtalkBasic(t *testing.T) {

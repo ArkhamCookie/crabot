@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"crabot/unixtime"
+	"github.com/ArkhamCookie/crabot/lib/timestamp/unixtime"
 )
 
 // Get timestamp from given time in short date format.

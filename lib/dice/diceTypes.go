@@ -1,8 +1,6 @@
 package dice
 
-import (
-	"crabot/dice/roll"
-)
+import "github.com/ArkhamCookie/crabot/dice/roll"
 
 // D2 rolls a D2 (1-2) `count` amount of times.
 func D2(count int) (result int) {

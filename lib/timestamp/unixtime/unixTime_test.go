@@ -3,7 +3,7 @@ package unixtime_test
 import (
 	"testing"
 
-	"crabot/unixtime"
+	"github.com/ArkhamCookie/crabot/lib/timestamp/unixtime"
 )
 
 func TestUnixTimeBasic(t *testing.T) {

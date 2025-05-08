@@ -1,9 +1,11 @@
 package lastupload_test
 
 import (
-	"crabot/lastupload"
-	"internal/env"
 	"testing"
+
+	"internal/env"
+
+	"github.com/ArkhamCookie/crabot/lib/lastupload"
 )
 
 func TestGetLastUploadData(t *testing.T) {

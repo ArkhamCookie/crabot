@@ -3,7 +3,7 @@ package dice_test
 import (
 	"testing"
 
-	"crabot/dice"
+	"github.com/ArkhamCookie/crabot/lib/dice"
 )
 
 func TestD2(t *testing.T) {

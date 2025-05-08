@@ -4,7 +4,7 @@ import (
 	"internal/env"
 	"testing"
 
-	"crabot/lastupload"
+	"github.com/ArkhamCookie/crabot/lib/lastupload"
 )
 
 func TestGetData(t *testing.T) {

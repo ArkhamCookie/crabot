@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"crabot/timestamp"
+	"github.com/ArkhamCookie/crabot/lib/timestamp"
 )
 
 func currentTime() string {

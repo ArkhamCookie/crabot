@@ -4,7 +4,7 @@ import (
 	"log"
 	"testing"
 
-	"crabot/dice"
+	"github.com/ArkhamCookie/crabot/lib/dice"
 )
 
 func TestCoinFlip(t *testing.T) {

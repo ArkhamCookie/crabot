@@ -9,12 +9,13 @@ import (
 	"strings"
 	"time"
 
-	"crabot/crabtalk"
-	"crabot/dice"
-	"crabot/lastupload"
-	"crabot/timestamp"
 	"internal/dicecmd"
 	"internal/env"
+
+	"github.com/ArkhamCookie/crabot/lib/crabtalk"
+	"github.com/ArkhamCookie/crabot/lib/dice"
+	"github.com/ArkhamCookie/crabot/lib/lastupload"
+	"github.com/ArkhamCookie/crabot/lib/timestamp"
 
 	"github.com/bwmarrin/discordgo"
 )

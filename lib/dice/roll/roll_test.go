@@ -3,7 +3,7 @@ package roll_test
 import (
 	"testing"
 
-	"crabot/dice/roll"
+	"github.com/ArkhamCookie/crabot/dice/roll"
 )
 
 func TestRoll(t *testing.T) {

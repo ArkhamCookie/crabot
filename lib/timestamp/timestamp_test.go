@@ -3,7 +3,7 @@ package timestamp_test
 import (
 	"testing"
 
-	"crabot/timestamp"
+	"github.com/ArkhamCookie/crabot/lib/timestamp"
 )
 
 func TestShortDate(t *testing.T) {

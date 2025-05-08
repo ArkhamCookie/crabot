@@ -3,7 +3,7 @@ package dicecmd
 import (
 	"log"
 
-	"crabot/dice"
+	"github.com/ArkhamCookie/crabot/lib/dice"
 )
 
 func DetermineDiceRoll(diceType string, diceAmount int) int {

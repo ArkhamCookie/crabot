@@ -1,11 +1,11 @@
-module crabot/dice
+module dice
 
 go 1.24.2
 
 require (
-	crabot/dice/roll v0.0.0
+	github.com/ArkhamCookie/crabot/lib/dice v0.0.0
 )
 
 replace (
-	crabot/dice/roll => ./roll
+	github.com/ArkhamCookie/crabot/lib/dice => .
 )
