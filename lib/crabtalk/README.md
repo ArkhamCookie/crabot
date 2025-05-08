@@ -36,6 +36,7 @@ import (
 func main() {
   crab, _ := crabtalk.Get("Hello World")
 
-  fmt.Println(crab) // "clickclickclickclick click clickclackclickclick clickclackclickclick clackclackclack / clickclackclack clackclackclack clickclackclick clickclackclickclick clackclickclick"
+  fmt.Println(crab)
+  // Output: "clickclickclickclick click clickclackclickclick clickclackclickclick clackclackclack / clickclackclack clackclackclack clickclackclick clickclackclickclick clackclickclick"
 }
 ```
