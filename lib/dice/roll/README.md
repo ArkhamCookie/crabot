@@ -20,6 +20,6 @@ func main() {
   result := roll.Roll(13)
 
   // Print the output
-  fmt.Printf("Rolled a %d\m", result)
+  fmt.Printf("Rolled a %d\n", result)
 }
 ```
