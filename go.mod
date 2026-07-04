@@ -12,7 +12,6 @@ require (
 )
 
 require (
-	crabot/timestamp v0.0.0
 	github.com/bwmarrin/discordgo v0.28.1
 )
 
