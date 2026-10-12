@@ -13,6 +13,8 @@ import (
 	"crabot/dice"
 	"crabot/lastupload"
 	"crabot/timestamp"
+
+	"internal/database"
 	"internal/dicecmd"
 	"internal/env"
 
@@ -21,8 +23,9 @@ import (
 
 // Bot flags
 var (
-	BotToken = flag.String("token", "", "Bot access token")
-	GuildID  = flag.String("guild", "", "Test guild ID. If not passed - bot registers commands globally")
+	BotToken     = flag.String("token", "", "Bot access token")
+	GuildID      = flag.String("guild", "", "Test guild ID. If not passed - bot registers commands globally")
+	databasePath = flag.String("db", "crabot.db", "Path of database file to use")
 
 	AddCommands    = flag.Bool("addcmd", false, "Add all commands on start up (only run on first startup)")
 	RemoveCommands = flag.Bool("rmcmd", false, "Remove all commands after shutdowning or not")
@@ -87,6 +90,19 @@ var (
 					Type:        discordgo.ApplicationCommandOptionString,
 					Name:        "call",
 					Description: "Call the coin in the air",
+					Required:    false,
+				},
+			},
+		},
+		{
+			// Database management command
+			Name:        "database",
+			Description: "Manage Crabot's database",
+			Options: []*discordgo.ApplicationCommandOption{
+				{
+					Type:        discordgo.ApplicationCommandOptionString,
+					Name:        "subcommand",
+					Description: "Subcommand to run",
 					Required:    false,
 				},
 			},
@@ -257,6 +273,50 @@ var (
 				Type: discordgo.InteractionResponseChannelMessageWithSource,
 				Data: &discordgo.InteractionResponseData{
 					Content: msgformat,
+				},
+			})
+		},
+		"database": func(session *discordgo.Session, interaction *discordgo.InteractionCreate) {
+			options := interaction.ApplicationCommandData().Options
+			subcommand := "none"
+
+			optionMap := make(map[string]*discordgo.ApplicationCommandInteractionDataOption, len(options))
+			if len(options) != 0 {
+				for _, opt := range options {
+					optionMap[opt.Name] = opt
+				}
+
+				option, ok := optionMap["subcommand"]
+				if !ok {
+					log.Println("[ERROR]: Error getting subcommand")
+				}
+				subcommand = option.StringValue()
+			}
+
+			message := "Database connected successfully!"
+			err := database.TestConnection(*databasePath)
+			if err != nil {
+				fmt.Printf("[ERROR]: %s\n", err)
+				message = fmt.Sprintf("Database connection failed!\n[ERROR]: %s", err)
+			}
+
+			switch strings.ToLower(subcommand) {
+			case "version":
+				version, err := database.GetSQLiteVersion(*databasePath)
+				if err != nil {
+					fmt.Printf("[ERROR]: %s\n", err)
+				}
+
+				message = fmt.Sprintf("Sqlite Version: %s\n", version)
+			case "none":
+			default:
+				message = "Invaild subcommand"
+			}
+
+			session.InteractionRespond(interaction.Interaction, &discordgo.InteractionResponse{
+				Type: discordgo.InteractionResponseChannelMessageWithSource,
+				Data: &discordgo.InteractionResponseData{
+					Content: message,
 				},
 			})
 		},
