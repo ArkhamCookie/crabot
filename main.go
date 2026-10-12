@@ -376,15 +376,16 @@ var (
 			case "coinflip":
 				msgformat += "> `/coinflip [guess]`\n"
 				msgformat += "> Flips a coin that you can optionally *guess* before it lands.\n"
-				msgformat += "> `guess`: heads or tails\n"
+				msgformat += "> `guess`: [`heads`, `tails`]\n"
 			case "database":
-				msgformat += "> `/databse [subcommand]`\n"
+				msgformat += "> `/database [subcommand]`\n"
 				msgformat += "> Gets info about currently running database\n"
 				msgformat += "> `subcommand`: [`version`]\n"
 			case "dice":
 				msgformat += "> `/dice [type] [times]`\n"
 				msgformat += "> Rolls the given *type* (defaults to D6) of dice given amount of *times* (defaults to 1)\n"
-				msgformat += "> `types`: D2, D4, D6, D8, D10, D12, D20, D100\n"
+				msgformat += "> `types`: [`D2`, `D4`, `D6`, `D8`, `D10`, `D12`, `D20`, `D100`]\n"
+				msgformat += "> `times`: int\n"
 			case "lastupload":
 				msgformat += "> `/lastupload <username>`\n"
 				msgformat += "> Fetches the last upload date of a YouTube *username*.\n"
@@ -392,7 +393,7 @@ var (
 			case "help":
 				msgformat += "> `/help [command]`\n"
 				msgformat += "> Shows help message for *command* or overview of all commands\n"
-				msgformat += "> `command`: Commands you want help with\n"
+				msgformat += "> `command`: Command you want help with\n"
 			case "timestamp":
 				msgformat += "> `/timestamp [year] [month] [day] [hour] [minute] [timezone]`\n"
 				msgformat += "> Generates a timestamp based on given time.\n"
