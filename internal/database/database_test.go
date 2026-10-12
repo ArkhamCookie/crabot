@@ -15,7 +15,7 @@ func TestGetDatabaseConnection(t *testing.T) {
 func TestGetSQLiteVersion(t *testing.T) {
 	inputPath := "crabot.db"
 
-	err := database.GetSQLiteVersion(inputPath)
+	_, err := database.GetSQLiteVersion(inputPath)
 	if err != nil {
 		t.Fatal("Error:", err)
 	}
