@@ -26,25 +26,25 @@ func TestConnection(path string) error {
 }
 
 // Get SQLite version
-func GetSQLiteVersion(path string) error {
+func GetSQLiteVersion(path string) (string, error) {
 	if path == "" {
 		path = "crabot.db"
 	}
 
 	database, err := sql.Open("sqlite", path)
 	if err != nil {
-		return err
+		return "", err
 	}
 
 	var version string
 	err = database.QueryRow("SELECT SQLITE_VERSION()").Scan(&version)
 	if err != nil {
-		return err
+		return "", err
 	}
 
 	defer database.Close()
 
 	fmt.Printf("SQLite Version: %s\n", version)
 
-	return nil
+	return version, nil
 }

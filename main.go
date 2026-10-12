@@ -290,7 +290,10 @@ var (
 				message = option.StringValue()
 			}
 
-			database.TestConnection(*databasePath)
+			err := database.TestConnection(*databasePath)
+			if err != nil {
+				fmt.Printf("[ERROR]: %s\n", err)
+			}
 
 			session.InteractionRespond(interaction.Interaction, &discordgo.InteractionResponse{
 				Type: discordgo.InteractionResponseChannelMessageWithSource,
