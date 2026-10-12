@@ -2,7 +2,7 @@ module internal/database
 
 go 1.24.2
 
-require github.com/glebarez/go-sqlite v1.22.0
+require github.com/glebarez/go-sqlite v1.23.0
 
 require (
 	github.com/dustin/go-humanize v1.0.1 // indirect

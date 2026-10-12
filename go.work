@@ -1,14 +1,14 @@
-go 1.24.2
+go 1.25.0
 
 use (
 	.
+	./internal/database
+	./internal/env
+
 	./lib/crabtalk
 	./lib/dice
 	./lib/dice/roll
 	./lib/lastupload
 	./lib/timestamp
 	./lib/timestamp/unixtime
-
-	./internal/env
-	./internal/database
 )
