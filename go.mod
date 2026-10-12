@@ -6,6 +6,7 @@ require (
 	crabot/crabtalk v0.0.0
 	crabot/dice v0.0.0
 	crabot/lastupload v0.0.0
+	crabot/timestamp v0.0.0
 	internal/database v0.0.0
 	internal/dicecmd v0.0.0
 	internal/env v0.0.0
