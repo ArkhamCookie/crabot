@@ -377,6 +377,10 @@ var (
 				msgformat += "> `/coinflip [guess]`\n"
 				msgformat += "> Flips a coin that you can optionally *guess* before it lands.\n"
 				msgformat += "> `guess`: heads or tails\n"
+			case "database":
+				msgformat += "> `/databse [subcommand]`\n"
+				msgformat += "> Gets info about currently running database\n"
+				msgformat += "> `subcommand`: [`version`]\n"
 			case "dice":
 				msgformat += "> `/dice [type] [times]`\n"
 				msgformat += "> Rolls the given *type* (defaults to D6) of dice given amount of *times* (defaults to 1)\n"
@@ -397,6 +401,7 @@ var (
 				msgformat += "> `basic-command`: Run a basic test command\n"
 				msgformat += "> `crabtalk`: Translates text to crab\n"
 				msgformat += "> `coinflip`: Flips a coin optionally allowing you to guess it in the air\n"
+				msgformat += "> `database`: Get info about current running database\n"
 				msgformat += "> `dice`: Rolls given type of dice an amount of times\n"
 				msgformat += "> `lastupload`: Fetches the last upload date of a YouTuber\n"
 				msgformat += "> `help`: This command; optionally pass a command to get more help for it\n"
