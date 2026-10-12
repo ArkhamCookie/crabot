@@ -21,6 +21,8 @@ func TestConnection(path string) error {
 	defer database.Close()
 
 	fmt.Println("Sqlite database connection successful")
+
+	return nil
 }
 
 // Get SQLite version
