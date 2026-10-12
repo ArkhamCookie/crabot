@@ -11,3 +11,12 @@ func TestGetDatabaseConnection(t *testing.T) {
 
 	database.TestConnection(inputPath)
 }
+
+func TestGetSQLiteVersion(t *testing.T) {
+	inputPath := "crabot.db"
+
+	err := database.GetSQLiteVersion(inputPath)
+	if err != nil {
+		t.Fatal("Error:", err)
+	}
+}
