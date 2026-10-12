@@ -278,21 +278,39 @@ var (
 		},
 		"database": func(session *discordgo.Session, interaction *discordgo.InteractionCreate) {
 			options := interaction.ApplicationCommandData().Options
+			subcommand := "none"
 
 			optionMap := make(map[string]*discordgo.ApplicationCommandInteractionDataOption, len(options))
-			for _, opt := range options {
-				optionMap[opt.Name] = opt
+			if len(options) != 0 {
+				for _, opt := range options {
+					optionMap[opt.Name] = opt
+				}
+
+				option, ok := optionMap["subcommand"]
+				if !ok {
+					log.Println("[ERROR]: Error getting subcommand")
+				}
+				subcommand = option.StringValue()
 			}
 
-			message := "Database connection test successful!"
-
-			if option, ok := optionMap["subcommand"]; ok {
-				message = option.StringValue()
-			}
-
+			message := "Database connected successfully!"
 			err := database.TestConnection(*databasePath)
 			if err != nil {
 				fmt.Printf("[ERROR]: %s\n", err)
+				message = fmt.Sprintf("Database connection failed!\n[ERROR]: %s", err)
+			}
+
+			switch strings.ToLower(subcommand) {
+			case "version":
+				version, err := database.GetSQLiteVersion(*databasePath)
+				if err != nil {
+					fmt.Printf("[ERROR]: %s\n", err)
+				}
+
+				message = fmt.Sprintf("Sqlite Version: %s\n", version)
+			case "none":
+			default:
+				message = "Invaild subcommand"
 			}
 
 			session.InteractionRespond(interaction.Interaction, &discordgo.InteractionResponse{
