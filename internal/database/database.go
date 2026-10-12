@@ -2,7 +2,6 @@ package database
 
 import (
 	"database/sql"
-	"fmt"
 
 	_ "github.com/glebarez/go-sqlite"
 )
@@ -19,8 +18,6 @@ func TestConnection(path string) error {
 	}
 
 	defer database.Close()
-
-	fmt.Println("Sqlite database connection successful")
 
 	return nil
 }
@@ -43,8 +40,6 @@ func GetSQLiteVersion(path string) (string, error) {
 	}
 
 	defer database.Close()
-
-	fmt.Printf("SQLite Version: %s\n", version)
 
 	return version, nil
 }
