@@ -220,7 +220,7 @@ var (
 				option := strings.ToLower(option.StringValue())
 
 				if option != "heads" && option != "tails" {
-					log.Panicln("[WARNING]: Unsupported coin side (use 'heads' or 'tails')")
+					log.Println("[WARNING]: Unsupported coin side (use 'heads' or 'tails')")
 				}
 
 				result, called, err := dice.CoinCall(option)
